@@ -6,7 +6,7 @@ function el(id){
 function setText(id, text) {
   document.getElementById(id).textContent = text;
 }
-fetch("/assets/data/players.json")
+fetch("./assets/data/players.json")
   .then((res) => res.json())
   .then((data) => {
     allPlayers = data.players;
