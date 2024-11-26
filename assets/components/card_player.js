@@ -16,5 +16,5 @@ name.innerHTML = `
                     </div>
                 </div>
             </div>`
-};
+}
 
