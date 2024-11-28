@@ -1,9 +1,11 @@
-import { el,setText } from "../js/main.js";
+
+import { el, setText } from "../js/main.js";
+
 export function inner(target, element){
-    target.innerHTML += `<div class="play w-20 h-20 hover:z-20">
+    target.innerHTML += `<div id="${element.id}" class="w-20 h-20 hover:z-20">
     <div class=" hi bg-cover flex flex-col items-center justify-center w-full h-full" style="background-image: url(assets/images/card1.png);">
         <div class="w-20 h-full ">
-        <div><img id="player_${element.name}" class="w-11 self-center m-auto mb-0 mt-[6px]" src="" alt="">
+        <div><img id="player_${element.name}"  class="w-11 self-center m-auto mb-0 mt-[6px]" src="" alt="">
     </div>
     <div class="h-[20%] w-full flex flex-row text-white text-center mt-0">
     
@@ -21,12 +23,74 @@ export function inner(target, element){
   </div>`
   let player = el(`player_${element.name}`);
     player.src = element.photo;
-    setText(`pac${element.name}`, element.shooting);
+    setText(`pac${element.name}`, element.pace);
     setText(`sho${element.name}`, element.shooting);
-    setText(`pas${element.name}`, element.shooting);
-    setText(`dri${element.name}`, element.shooting);
-    setText(`def${element.name}`, element.shooting);
-    setText(`phy${element.name}`, element.shooting); 
+    setText(`pas${element.name}`, element.passing);
+    setText(`dri${element.name}`, element.dribbling);
+    setText(`def${element.name}`, element.defending);
+    setText(`phy${element.name}`, element.physical);
+}
+export function innerfilter(target, element){
+    target.innerHTML += `<div id="div_change${element.name}" class="play w-20 h-20 hover:z-20" onclick="add('${element.id}')">
+    <div class=" hi bg-cover flex flex-col items-center justify-center w-full h-full" style="background-image: url(assets/images/card1.png);">
+        <div class="w-20 h-full ">
+        <div><img id="${element.id}"  class="w-11 self-center m-auto mb-0 mt-[6px]" src="" alt="">
+    </div>
+    <div class="h-[20%] w-full flex flex-row text-white text-center mt-0">
+    
+        <div class="w-[50%] items-start text-[4px] mt-[2px]  grid ml-4">
+            <span id="pac${element.name}"></span>
+            <span id="sho${element.name}"></span>
+            <span id="pas${element.name}"></span>
+        </div>
+        <div class="w-[50%]  mt-[2px] text-[4px] grid mr-7 ">
+            <span id="dri${element.name}"></span>
+            <span id="def${element.name}"></span>
+            <span id="phy${element.name}"></span>
+        </div>
+    </div>
+  </div>`
+  let player = el(`${element.id}`);
+    player.src = element.photo;
+    setText(`pac${element.name}`, element.pace);
+    setText(`sho${element.name}`, element.shooting);
+    setText(`pas${element.name}`, element.passing);
+    setText(`dri${element.name}`, element.dribbling);
+    setText(`def${element.name}`, element.defending);
+    setText(`phy${element.name}`, element.physical);
+}
+
+
+
+
+export function add_aj(target, element){
+    target.innerHTML = `<div id="div_change" class="play w-20 h-20 hover:z-20">
+    <div class=" hi bg-cover flex flex-col items-center justify-center w-full h-full" style="background-image: url(assets/images/card1.png);">
+        <div class="w-20 h-full ">
+        <div><img id="${element.id}"  class="w-11 self-center m-auto mb-0 mt-[6px]" src="" alt="">
+    </div>
+    <div class="h-[20%] w-full flex flex-row text-white text-center mt-0">
+    
+        <div class="w-[50%] items-start text-[4px] mt-[2px]  grid ml-4">
+            <span id="pac${element.name}"></span>
+            <span id="sho${element.name}"></span>
+            <span id="pas${element.name}"></span>
+        </div>
+        <div class="w-[50%]  mt-[2px] text-[4px] grid mr-7 ">
+            <span id="dri${element.name}"></span>
+            <span id="def${element.name}"></span>
+            <span id="phy${element.name}"></span>
+        </div>
+    </div>
+  </div>`
+  let player = el(`${element.id}`);
+    player.src = element.photo;
+    setText(`pac${element.name}`, element.pace);
+    setText(`sho${element.name}`, element.shooting);
+    setText(`pas${element.name}`, element.passing);
+    setText(`dri${element.name}`, element.dribbling);
+    setText(`def${element.name}`, element.defending);
+    setText(`phy${element.name}`, element.physical);
 }
 // function addplayer(allPlayers){
   
