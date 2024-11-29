@@ -4,7 +4,7 @@ import { el, setText , } from "../js/main.js";
 ////////////////////////////////////////////////// NORMAL PLAYERS
 
 export function add_to_terran(target, element){
-    target.innerHTML = `<div id="div_change" class="play w-20 h-20 hover:z-20">
+    target.innerHTML = `<div id="${element.nationality}" class="relative play w-20 h-20 hover:z-20">
     <div class=" hi bg-cover flex flex-col items-center justify-center w-full h-full" style="background-image: url(assets/images/card1.png);">
         <div class="w-20 h-full ">
         <div><img id="${element.id}"  class="w-11 self-center m-auto mb-0 mt-[6px]" src="" alt="">
@@ -22,6 +22,7 @@ export function add_to_terran(target, element){
             <span id="phy${element.name}"></span>
         </div>
     </div>
+    <button class="bg-red-300 w-5 h-5 rounded-[100%] absolute top-0 left-0" onclick="delet(${element.nationality})"></button>
   </div>`
   let player = el(`${element.id}`);
     player.src = element.photo;
@@ -35,7 +36,7 @@ export function add_to_terran(target, element){
 
 ///////////////////////////////////////////////// GK
 export function add_to_terran_like_GK(target, element){
-    target.innerHTML = `<div id="div_change" class="play w-20 h-20 hover:z-20">
+    target.innerHTML = `<div id="${element.nationality}" class="relative play w-20 h-20 hover:z-20">
     <div class=" hi bg-cover flex flex-col items-center justify-center w-full h-full" style="background-image: url(assets/images/Capture_d_écran_2024-11-29_040710-removebg-preview.png);">
         <div class="w-20 h-full ">
         <div><img id="${element.id}"  class="w-11 self-center m-auto mb-0 mt-[6px]" src="" alt="">
@@ -53,6 +54,7 @@ export function add_to_terran_like_GK(target, element){
             <div class="flex flex-row"><span id="spe${element.name}"></span><span class="ml-1">  spe</span></div>
             <div class="flex flex-row"><span id="pos${element.name}"></span><span class="ml-1">  pos</span></div>
         </div>
+            <button class="bg-red-300 w-5 h-5 rounded-[100%] absolute top-0 left-0" onclick="delet(${element.nationality})"></button>
     </div>
   </div>`
   let player = el(`${element.id}`);

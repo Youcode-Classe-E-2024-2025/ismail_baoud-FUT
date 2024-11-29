@@ -121,7 +121,7 @@ let all_players = [
   {
     "id":8,
     "name": "Mohamed Salah",
-    "photo": "https://cdn.sofifa.net/players/192/985/25_120.png",
+    "photo": "https://cdn.sofifa.net/players/209/331/25_240.png",
     "position": "RW",
     "nationality": "Egypt",
     "flag": "https://cdn.sofifa.net/flags/eg.png",
@@ -510,10 +510,21 @@ el('btn_ajout').addEventListener('click',()=>{
 
 
 window.delet = (id) =>{
+  console.log(id, typeof(id));
+  if(typeof(id) === 'number'){
   const index_player = all_players.findIndex(player => player.id === id);
   all_players.splice(index_player, 1);
   
+  
   add_players_to_changement();
+  }
+  else{
+    const hi = el(`${id}`);
+    id.innerHTML = "";
+    id.innerHTML = `<img class="w-16 m-auto" src="assets/images/plus1.png" alt="">`
+    
+    
+  }
 
 }
 
@@ -590,7 +601,7 @@ id.forEach(elem =>{
           data_id = this.getAttribute('data-id');
           
           data_target = document.querySelector(`[data-id="${data_id}"]`);
-          data_target.innerHTML = "";
+          
           filter_players(all_players);
 })
 })
@@ -620,8 +631,8 @@ function filter_players(arr){
     add_to_terran_like_GK(data_target,player);
     
    }
-      const elem = document.getElementById(`div_change${player.name}`);
-      elem.remove();
+      // const elem = document.getElementById(`div_change${player.name}`);
+      // elem.remove();
       
 
   }
@@ -645,7 +656,7 @@ function submit_data(array){
   let count = 27;
   form.addEventListener('submit', (e)=>{
       e.preventDefault();
-      
+      const player_name = Name.value
       const player_url = url.value
       const player_logo = logo.value
       const player_pac = pac.value

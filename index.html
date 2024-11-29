@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./assets/css/output.css">
     <style>
         .hi:hover{
-            scale: 2.5;
+            scale: 2;
             z-index: 50;
             position: relative;
             }
@@ -33,11 +33,22 @@
                 background: #8be99e;
             }
             #btn_ajout{
+                box-shadow: -2px 5px 5px 2px black;
+                text-shadow: white 20px 10px 0px 0px, white 30px 20px 0px 0px;
                 background: linear-gradient(to right, rgb(248, 248, 225), rgb(15, 13, 13));
                 transition: background-color 3s;
             }
             #btn_ajout:hover{
                 background: linear-gradient(to right, rgb(32, 28, 28), rgb(208, 208, 197))
+            }
+            #all_players{
+                box-shadow: -2px 5px 5px 2px black;
+                text-shadow: white 20px 10px 0px 0px, white 30px 20px 0px 0px;
+                background: linear-gradient(to right, rgb(242, 242, 112), rgb(205, 247, 122));
+                transition: background-color 3s;
+            }
+            #all_players:hover{
+                background: linear-gradient(to right, rgb(202, 252, 141), rgb(243, 219, 131))
             }
             @media (min-width: 900px){
             #terran{
@@ -111,7 +122,15 @@
 
             }   
             }
-    
+            ::-webkit-scrollbar {
+            width: 5px;
+            height: 8px; /* Height of the scrollbar (for horizontal scrollbars) */
+            }
+
+            ::-webkit-scrollbar-thumb {
+            background: #000; /* Color of the scrollbar thumb */
+            border-radius: 5px; /* Rounded corners for the thumb */
+            }
             </style>
 
     
@@ -120,62 +139,64 @@
     <footer class="h-[100px] bg-white">
         
     </footer>
-    <section class="relative w-screen h-[100%] grid gap-2 sm:grid-rows-1 grid-rows-2 grid-cols-6 ">
+    <section class="relative w-[100%] h-[100%] grid gap-2 sm:grid-rows-1 grid-rows-2 grid-cols-6 ">
         <div id="terran" class="grid w-full sm:static absolute sm: bottom-0 row-start-2 sm:row-start-1 sm:col-start-2 sm:col-span-2 col-start-1 col-span-6 bg-cover aspect-[191/245] grid-rows-7 grid-cols-5" style=" background-repeat: no-repeat; margin: 50px 0px;"> 
-            <div id="GK" data-id="GK" class="s w-20 h-20  col-start-3 row-start-7 bg-cover" style="background-image: url(assets/images/Capture_d_écran_2024-11-29_040710-removebg-preview.png);">
-                <!-- <img class="w-10 m-auto" src="assets/images/plus1.png" alt=""> -->
+            <div id="GK" data-id="GK" class="s w-20 h-20  col-start-3 row-start-7 bg-cover">
+                <img class="w-16 m-auto" src="assets/images/plus1.png" alt="">
 
             </div>
-            <div id="LB" data-id="LB" class="s w-20  h-20  col-start-1 row-start-6 bg-cover" style="background-image: url(assets/images/card1.png);">
-                <!-- <img class="w-10 m-auto" src="assets/images/plus1.png" alt=""> -->
-
-
-            </div>
-            <div id="CB" data-id="CB1" class="s w-20 h-20  col-start-2 row-start-6 bg-cover"  style="background-image: url(assets/images/card1.png);">
-                <!-- <img class="w-10 m-auto" src="assets/images/plus1.png" alt=""> -->
+            <div id="LB" data-id="LB" class="s w-20  h-20  col-start-1 row-start-6 bg-cover">
+                <img class="w-16 m-auto" src="assets/images/plus1.png" alt="">
 
 
             </div>
-            <div id="CB" data-id="CB2" class="s w-20 h-20  col-start-4 row-start-6 bg-cover"  style="background-image: url(assets/images/card1.png);">
-                <!-- <img class="w-10 m-auto" src="assets/images/plus1.png" alt=""> -->
+            <div id="CB" data-id="CB1" class="s w-20 h-20  col-start-2 row-start-6 bg-cover">
+                <img class="w-16 m-auto" src="assets/images/plus1.png" alt="">
 
 
             </div>
-            <div id="RB" data-id="RB" class="s w-20 h-20  col-start-5 row-start-6 bg-cover"  style="background-image: url(assets/images/card1.png);">
-                <!-- <img class="w-10 m-auto" src="assets/images/plus1.png" alt=""> -->
+            <div id="CB" data-id="CB2" class="s w-20 h-20  col-start-4 row-start-6 bg-cover">
+                <img class="w-16 m-auto" src="assets/images/plus1.png" alt="">
 
 
             </div>
-            <div id="CM" data-id="CM1" class="s w-20 h-20  col-start-1 row-start-4 bg-cover"  style="background-image: url(assets/images/card1.png);">
-                <!-- <img class="w-10 m-auto" src="assets/images/plus1.png" alt=""> -->
+            <div id="RB" data-id="RB" class="s w-20 h-20  col-start-5 row-start-6 bg-cover">
+                <img class="w-16 m-auto" src="assets/images/plus1.png" alt="">
 
 
             </div>
-            <div id="CM" data-id="CM2" class="s w-20 h-20  col-start-3 row-start-4 bg-cover"  style="background-image: url(assets/images/card1.png);">
-                <!-- <img class="w-10 m-auto" src="assets/images/plus1.png" alt=""> -->
+            <div id="CM" data-id="CM1" class="s w-20 h-20  col-start-1 row-start-4 bg-cover">
+                <img class="w-16 m-auto" src="assets/images/plus1.png" alt="">
 
 
             </div>
-            <div id="CM" data-id="CM3" class="s w-20 h-20  col-start-5 row-start-4 bg-cover"  style="background-image: url(assets/images/card1.png);">
-                <!-- <img class="w-10 m-auto" src="assets/images/plus1.png" alt=""> -->
+            <div id="CM" data-id="CM2" class="s w-20 h-20  col-start-3 row-start-4 bg-cover">
+                <img class="w-16 m-auto" src="assets/images/plus1.png" alt="">
 
 
             </div>
-            <div id="LW" data-id="LW" class="s w-20 h-20  col-start-2 row-start-2 bg-cover"  style="background-image: url(assets/images/card1.png);">
-                <!-- <img class="w-10 m-auto" src="assets/images/plus1.png" alt=""> -->
-            </div>
-            <div id="ST" data-id="ST" class="s w-20 h-20  col-start-3 row-start-2 bg-cover"  style="background-image: url(assets/images/card1.png);">
-                <!-- <img  id="player_x" class="w-10 m-auto block" src="assets/images/plus1.png" alt=""> -->
+            <div id="CM" data-id="CM3" class="s w-20 h-20  col-start-5 row-start-4 bg-cover">
+                <img class="w-16 m-auto" src="assets/images/plus1.png" alt="">
+
 
             </div>
-            <div id="RW" data-id="RW" class="s w-20 h-20 bg-cover  col-start-4 row-start-2" style="background-image: url(assets/images/card1.png);">
-                <!-- <img class="w-10 m-auto" src="assets/images/plus1.png" alt=""> -->
+            <div id="LW" data-id="LW" class="s w-20 h-20  col-start-2 row-start-2 bg-cover">
+                <img class="w-16 m-auto" src="assets/images/plus1.png" alt="">
+            </div>
+            <div id="ST" data-id="ST" class="s w-20 h-20  col-start-3 row-start-2 bg-cover">
+                <img class="w-16 m-auto block" src="assets/images/plus1.png" alt="">
+
+            </div>
+            <div id="RW" data-id="RW" class="s w-20 h-20 bg-cover  col-start-4 row-start-2" >
+                <img class="w-16 m-auto" src="assets/images/plus1.png" alt="">
 
             </div>
         </div>
 
         <div id="change" class=" mb-10 col-start-1 sm:col-start-4 col-span-6 sm:col-span-3 mt-32  flex flex-col h-96 justify-center overflow-y-scroll items-center">
-            <button id="btn_ajout" class="   text-white absolute h-10 w-40 rounded-xl right-54 top-10">add player</button>
+            <button id="btn_ajout" class="  text-white absolute h-10 w-40 rounded-xl right-54 top-10">add player</button>
+            <button id="all_players" class="  text-white absolute h-10 w-40 rounded-xl right-10 top-10">all players</button>
+
             <div id="changement" class="mt-auto h-96" >
                 
             </div>
