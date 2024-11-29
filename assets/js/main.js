@@ -521,7 +521,7 @@ window.delet = (id) =>{
   else{
     const hi = el(`${id}`);
     id.innerHTML = "";
-    id.innerHTML = `<img class="w-16 m-auto" src="assets/images/plus1.png" alt="">`
+    id.innerHTML = `<img class="w-16 m-auto" src="./assets/images/plus1.png" alt="">`
     
     
   }
