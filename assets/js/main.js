@@ -621,7 +621,7 @@ function filter_players(arr) {
     // let id_data;
     const plays = document.querySelectorAll(".play");
      console.log(plays);
-     if (plays.length > 1) {
+     if (plays.length > 0) {
       
      
     const isExist = Array.from(plays).find(
@@ -678,6 +678,58 @@ function submit_data(array) {
     const player_club = club.value;
     const player_drib = drib.value;
     const player_def = def.value;
+
+
+    const name_regex = /^[A-Za-z\s]+$/; 
+    const url_regex = /^(https?:\/\/)?([\w\d-]+\.)+[\w\d]{2,}(\/[\w\d-_.?&%=]*)*$/;
+    const stat_regex = /^\d+$/;
+    const rating_regex = /^(?:[1-9]?[0-9]|100)$/;
+    if (!name_regex.test(player_name)) {
+      alert("Player name should contain only letters and spaces.");
+      return;
+    }
+    if (!url_regex.test(player_url)) {
+      alert("Please enter a valid URL for the player photo.");
+      return;
+    }
+    if (!url_regex.test(player_logo)) {
+      alert("Please enter a valid URL for the player logo.");
+      return;
+    }
+    if (!stat_regex.test(player_pac) || player_pac < 1 || player_pac > 100) {
+      alert("Pace must be a number between 1 and 100.");
+      return;
+    }
+    if (!stat_regex.test(player_pas) || player_pas < 1 || player_pas > 100) {
+      alert("Passing must be a number between 1 and 100.");
+      return;
+    }
+    if (!stat_regex.test(player_phy) || player_phy < 1 || player_phy > 100) {
+      alert("Physical must be a number between 1 and 100.");
+      return;
+    }
+    if (!statR_regex.test(player_sho) || player_sho < 1 || player_sho > 100) {
+      alert("Shooting must be a number between 1 and 100.");
+      return;
+    }
+    if (!rating_regex.test(player_rat) || player_rat < 1 || player_rat > 100) {
+      alert("Rating must be a number between 1 and 100.");
+      return;
+    }
+    if (!stat_regex.test(player_drib) || player_drib < 1 || player_drib > 100) {
+      alert("Dribbling must be a number between 1 and 100.");
+      return;
+    }
+    if (!stat_regex.test(player_def) || player_def < 1 || player_def > 100) {
+      alert("Defending must be a number between 1 and 100.");
+      return;
+    }
+    if (!player_position || !player_country || !player_flag || !player_club) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+
     const obg = {
       id: count,
       name: player_name,
@@ -695,7 +747,7 @@ function submit_data(array) {
       defending: player_def,
       physical: player_phy,
     };
-
+    
     // if(changement.children.length === 0 ){
     //   array = '';
     //   array = [];
