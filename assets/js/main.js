@@ -1,4 +1,4 @@
-export const all_players = [
+let all_players = [
   {
     "id":1,
     "name": "Lionel Messi",
@@ -41,7 +41,7 @@ export const all_players = [
     "nationality": "Belgium",
     "flag": "https://cdn.sofifa.net/flags/be.png",
     "club": "Manchester City",
-    "logo": "https://cdn.sofifa.net/players/239/085/25_120.png",
+    "logo": "https://static.cdnlogo.com/logos/m/5/manchester-city-fc.svg",
     "rating": 91,
     "pace": 74,
     "shooting": 86,
@@ -245,7 +245,7 @@ export const all_players = [
     "nationality": "Norway",
     "flag": "https://cdn.sofifa.net/flags/no.png",
     "club": "Manchester City",
-    "logo": "https://cdn.sofifa.net/players/239/085/25_120.png",
+    "logo": "https://static.cdnlogo.com/logos/m/5/manchester-city-fc.svg",
     "rating": 91,
     "pace": 89,
     "shooting": 94,
@@ -347,6 +347,7 @@ export const all_players = [
     "nationality": "England",
     "flag": "https://cdn.sofifa.net/flags/gb-eng.png",
     "club": "Liverpool",
+    "logo": "https://static.cdnlogo.com/logos/l/92/liverpool-fc.svg",
     "rating": 87,
     "pace": 76,
     "shooting": 66,
@@ -456,45 +457,113 @@ const pas = document.getElementById('pas');
 const phy = document.getElementById('phy');
 const drib = document.getElementById('drib');
 const def = document.getElementById('def');
-const btn = document.getElementById('btn');
-
-
+const consol_btn = document.getElementById('consol_btn');
+const edit_consol_btn = document.getElementById('edit_consol_btn');
 
 const sho = document.getElementById('sho');
 const rat = document.getElementById('rat');
 const logo = document.getElementById('logo');
-
 const position = document.getElementById('position');
 const country = document.getElementById('country');
 const div_form = document.getElementById('form');
 
+////////////////////////////////////////////////////////////
+
+const edit_form = document.querySelector('#edit_form');
+const new_Name = document.getElementById('new_name');
+const new_url = document.getElementById('new_url');
+const new_pac = document.getElementById('new_pac');
+const new_pas = document.getElementById('new_pas');
+const new_phy = document.getElementById('new_phy');
+const new_drib = document.getElementById('new_drib');
+const new_def = document.getElementById('new_def');
+const new_sho = document.getElementById('new_sho');
+const new_rat = document.getElementById('new_rat');
+const new_logo = document.getElementById('new_logo');
+const new_flag = document.getElementById('new_flag');
+const new_club = document.getElementById('new_club')
+const new_position = document.getElementById('new_position');
+const new_country = document.getElementById('new_country');
+const new_div_form = document.getElementById('div_edit_form')
 
 // import {inner} from "../components/afichage.js"
 import {innerfilter, add_aj} from "../components/afichage.js"
 const changement = document.getElementById('changement');
 const id = document.querySelectorAll('.s');
-const delet_btn = document.getElementById('delet_btn');
+// const delet_btn = document.getElementById('delet_btn');
 export function el(id){
     return document.getElementById(id)
 }
 export function setText(id, text) {
   document.getElementById(id).textContent = text;
 }
+consol_btn.addEventListener('click',()=>{
+  div_form.classList.toggle('hidden');
+})
+edit_consol_btn.addEventListener('click',()=>{
+  new_div_form.classList.toggle('hidden');
+})
 
-window.delet = (event) =>{
-  let targ = event.target.parentElement;
-  console.log(targ);
-  targ.remove();
-  
-}
-window.edit = (event, id) =>{
-  // let targ = event.target.parentElement;
+
+
+
+window.delet = (id) =>{
+  const index_player = all_players.findIndex(player => player.id === id);
+  all_players.splice(index_player, 1);
   console.log(id);
-  let hi = get_arr();
-  console.log(hi[id]);
+  
+  add_players_to_changement()
+console.log(all_players);
+
 }
 
+window.edit = (id) =>{
+  new_div_form.classList.toggle('hidden');
 
+  const player = all_players[id-1];
+  new_Name.value = player.name;
+  new_url.value = player.url;
+  new_pac.value = player.pace;
+  new_pas.value = player.pas;
+  new_phy.value = player.phy;
+  new_drib.value = player.drib;
+  new_def.value = player.def;
+  new_sho.value = player.sho;
+  new_rat.value = player.rat;
+  new_logo.value = player.logo;
+  new_position.value = player.position;
+  new_country.value = player.country;
+  new_flag.value = player.flag;
+  new_club.value = player.club;
+
+  edit_form.addEventListener('submit',(e) =>{
+    
+    
+    
+    e.preventDefault();
+
+    
+      
+    player.name = new_Name.value;
+    player.url = new_url.value;
+    player.pace = new_pac.value;
+    player.pas = new_pas.value;
+    player.phy = new_phy.value ;
+    player.drib = new_drib.value ;
+    player.def = new_def.value ;
+    player.sho = new_sho.value ;
+    player.rat = new_rat.value ;
+    player.logo = new_logo.value ;
+    player.position = new_position.value ;
+    player.country = new_country.value ;
+    player.flag = new_flag.value ;
+    player.club = new_club.value ;
+
+
+      add_players_to_changement()
+      new_div_form.classList.toggle('hidden');
+    }, { once: true });
+  }
 
 let pos;
 let data_id;
@@ -520,7 +589,7 @@ add_players_to_changement();
 
 
 function add_players_to_changement(){
-  // let new_tabl = submit_data(all_players)
+  changement.innerHTML = "";
  all_players.forEach(element => {
     changement.innerHTML += innerfilter(element)
 });
@@ -565,7 +634,6 @@ window.remove_hid = () =>{
 //   console.log('hi');
   
 submit_data(all_players)
-  
 
 function submit_data(array){
   let count = 27;
@@ -585,9 +653,6 @@ function submit_data(array){
       const player_club = club.value
       const player_drib = drib.value
       const player_def = def.value
-
-
-
 
   
       console.log(player_name);
@@ -611,12 +676,19 @@ function submit_data(array){
         }
         console.log(obg);
         
+        if(changement.children.length === 0 ){
+          console.log('hi');
+          array = '';
+          array = [];
+        console.log(array);
+          
+          
+        }
         
         count++;
         array.push(obg);
-        console.log(array);
+        
         add_players_to_changement();
-        div_form.classList.toggle('hidden')
-
+        div_form.classList.toggle('hidden');
   })
 }

@@ -154,17 +154,21 @@ function place_of_player(arr){
   }
  export function innerfilter(element) {
     return `
-      <div class="bg-white rounded-lg mb-2 shadow-md flex items-center p-4] h-10  flex-row w-full" onclick="add(${element.id})">
+      <div id="${element.id}" class="bg-white rounded-lg mb-4 shadow-md flex items-center p-4] h-10  flex-row w-full cursor-pointer" onclick="add(${element.id})">
         <img class="w-10 h-10 bg-cover bg-center flex rounded-full mr-4" src="${element.photo}""></img>
         <div class="flex flex-row">
           <div class="flex flex-row h-10">
               <span class="text-sm mr-2 w-28 m-auto font-semibold text-gray-800">${element.name}</span>
               <span class="text-sm mr-2  w-6 m-auto text-gray-600"><img src="${element.flag}"></span>
-              <span class="text-sm mr-2 m-auto text-gray-600">${element.club}></span>
+              <span class="text-sm mr-2 w-20 m-auto text-gray-600">${element.club}</span>
               <span class="text-sm w-4 m-auto  mr-5 text-gray-600"><img src="${element.logo}"></span>
-              <span class="text-sm mr-2 m-auto text-gray-600">${element.nationality}</span>
-              <span class="text-sm mr-2 m-auto text-gray-600">${element.position}</span>
+              <span class="text-sm mr-2 w-16 m-auto text-gray-600">${element.nationality}</span>
+              <span class="text-sm mr-2 m-auto px-3 ml-4 border-black border-2 text-gray-600">${element.position}</span>
           </div>
+        <div>
+            <button type="button" id="delet_btn" class=" bg-red-300  pl-2 pr-2 rounded-xl text-center text-xs text-white" onclick="delet(${element.id})">delet</button>
+            <button type="button" id="edit_btn" class=" bg-blue-300  pl-3 pr-3 rounded-xl text-center text-xs text-white" onclick="edit(${element.id})">edit</button>
+        </div>
         
         </div>
       </div>
