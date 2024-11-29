@@ -4,7 +4,7 @@ import { el, setText , } from "../js/main.js";
 ////////////////////////////////////////////////// NORMAL PLAYERS
 
 export function add_to_terran(target, element){
-    target.innerHTML = `<div id="${element.nationality}" class="relative play w-20 h-20 hover:z-20">
+    target.innerHTML = `<div id="${element.nationality}" data-id="${element.id}" class="relative play w-20 h-20 hover:z-20">
     <div class=" hi bg-cover flex flex-col items-center justify-center w-full h-full" style="background-image: url(assets/images/card1.png);">
         <div class="w-20 h-full ">
         <div><img id="${element.id}"  class="w-11 self-center m-auto mb-0 mt-[6px]" src="" alt="">
@@ -36,7 +36,7 @@ export function add_to_terran(target, element){
 
 ///////////////////////////////////////////////// GK
 export function add_to_terran_like_GK(target, element){
-    target.innerHTML = `<div id="${element.nationality}" class="relative play w-20 h-20 hover:z-20">
+    target.innerHTML = `<div id="${element.nationality}" data-id="${element.id}" class="play relative play w-20 h-20 hover:z-20">
     <div class=" hi bg-cover flex flex-col items-center justify-center w-full h-full" style="background-image: url(assets/images/Capture_d_écran_2024-11-29_040710-removebg-preview.png);">
         <div class="w-20 h-full ">
         <div><img id="${element.id}"  class="w-11 self-center m-auto mb-0 mt-[6px]" src="" alt="">
@@ -70,12 +70,12 @@ export function add_to_terran_like_GK(target, element){
 
  export function cards_of_players(element) {
     return `
-      <div id="div_g1" class="bg-white rounded-lg mb-4 shadow-md flex items-center p-4] h-10  flex-row w-full cursor-pointer" onclick="add(${element.id})">
+      <div id="div_g1" class="bg-white rounded-lg mb-4 shadow-md flex items-center p-4 h-10  flex-row w-full cursor-pointer" onclick="add(${element.id})">
         <img class="w-10 h-10 bg-cover bg-center flex rounded-full mr-4" src="${element.photo}""></img>
         <div class="flex flex-row">
-          <div id="div_g" class="flex flex-row h-10">
-              <span id="img" class="text-sm mr-2 w-28 m-auto font-semibold text-gray-800">${element.name}</span>
-              <div id="f_c" class="flex flex-row">
+          <div id="div_g" class="flex justify-between items-center h-10">
+              <span id="img" class="text-sm mr-2 m-auto font-semibold text-gray-800">${element.name}</span>
+              <div id="f_c" class="flex-row hidden lg:flex">
                 <span class="text-sm mr-2  w-6 m-auto text-gray-600"><img src="${element.flag}"></span>
                 <span id="club" class="text-sm mr-2 w-20 m-auto text-gray-600">${element.club}</span>
               </div >
