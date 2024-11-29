@@ -12,7 +12,7 @@ let all_players = [
     "pace": 85,
     "shooting": 92,
     "passing": 91,
-    "dribbling": 95,
+    "passing": 95,
     "defending": 35,
     "physical": 65
   },
@@ -435,7 +435,7 @@ let all_players = [
     "logo": "https://cdn.sofifa.net/meta/team/591/120.png",
     "rating": 89,
     "diving": 88,
-    "handling": 84,
+    "handling":83,
     "kicking": 75,
     "reflexes": 90,
     "speed": 50,
@@ -478,7 +478,6 @@ const new_phy = document.getElementById('new_phy');
 const new_drib = document.getElementById('new_drib');
 const new_def = document.getElementById('new_def');
 const new_sho = document.getElementById('new_sho');
-const new_rat = document.getElementById('new_rat');
 const new_logo = document.getElementById('new_logo');
 const new_flag = document.getElementById('new_flag');
 const new_club = document.getElementById('new_club')
@@ -487,7 +486,7 @@ const new_country = document.getElementById('new_country');
 const new_div_form = document.getElementById('div_edit_form')
 
 // import {inner} from "../components/afichage.js"
-import {innerfilter, add_aj} from "../components/afichage.js"
+import {cards_of_players, add_to_terran , add_to_terran_like_GK} from "../components/afichage.js"
 const changement = document.getElementById('changement');
 const id = document.querySelectorAll('.s');
 // const delet_btn = document.getElementById('delet_btn');
@@ -504,16 +503,17 @@ edit_consol_btn.addEventListener('click',()=>{
   new_div_form.classList.toggle('hidden');
 })
 
+el('btn_ajout').addEventListener('click',()=>{
+  div_form.classList.toggle('hidden');
 
+})
 
 
 window.delet = (id) =>{
   const index_player = all_players.findIndex(player => player.id === id);
   all_players.splice(index_player, 1);
-  console.log(id);
   
-  add_players_to_changement()
-console.log(all_players);
+  add_players_to_changement();
 
 }
 
@@ -521,7 +521,23 @@ window.edit = (id) =>{
   new_div_form.classList.toggle('hidden');
 
   const player = all_players[id-1];
+  if(player.position !== 'GK'){
   new_Name.value = player.name;
+  new_url.value = player.photo;
+  new_pac.value = player.pace;
+  new_pas.value = player.passing;
+  new_phy.value = player.physical;
+  new_drib.value = player.dribbling;
+  new_def.value = player.defending;
+  new_sho.value = player.shooting;
+  new_logo.value = player.logo;
+  new_position.value = player.position;
+  new_country.value = player.nationality;
+  new_flag.value = player.flag;
+  new_club.value = player.club;
+  }
+  else{
+    new_Name.value = player.name;
   new_url.value = player.url;
   new_pac.value = player.pace;
   new_pas.value = player.pas;
@@ -529,12 +545,12 @@ window.edit = (id) =>{
   new_drib.value = player.drib;
   new_def.value = player.def;
   new_sho.value = player.sho;
-  new_rat.value = player.rat;
   new_logo.value = player.logo;
   new_position.value = player.position;
   new_country.value = player.country;
   new_flag.value = player.flag;
   new_club.value = player.club;
+  }
 
   edit_form.addEventListener('submit',(e) =>{
     
@@ -545,14 +561,13 @@ window.edit = (id) =>{
     
       
     player.name = new_Name.value;
-    player.url = new_url.value;
+    player.photo = new_url.value;
     player.pace = new_pac.value;
-    player.pas = new_pas.value;
-    player.phy = new_phy.value ;
-    player.drib = new_drib.value ;
-    player.def = new_def.value ;
-    player.sho = new_sho.value ;
-    player.rat = new_rat.value ;
+    player.passing = new_pas.value;
+    player.physical = new_phy.value ;
+    player.passing = new_drib.value ;
+    player.defending = new_def.value ;
+    player.shooting = new_sho.value ;
     player.logo = new_logo.value ;
     player.position = new_position.value ;
     player.country = new_country.value ;
@@ -571,14 +586,11 @@ let data_target;
 id.forEach(elem =>{
         elem.addEventListener('click', function(){
           pos = this.id;
-          console.log(pos);
           
           data_id = this.getAttribute('data-id');
-          console.log(data_id);
           
           data_target = document.querySelector(`[data-id="${data_id}"]`);
           data_target.innerHTML = "";
-          console.log(elem);
           filter_players(all_players);
 })
 })
@@ -591,7 +603,7 @@ add_players_to_changement();
 function add_players_to_changement(){
   changement.innerHTML = "";
  all_players.forEach(element => {
-    changement.innerHTML += innerfilter(element)
+    changement.innerHTML += cards_of_players(element)
 });
 
 }
@@ -599,11 +611,15 @@ function add_players_to_changement(){
 
 function filter_players(arr){
   window.add = (id) => {
-    let player_id = id;
-    console.log(player_id);
 
    let player =  arr[id - 1];
-   add_aj(data_target,player);
+   if(pos !== "GK"){
+    add_to_terran(data_target,player);
+   }
+   else{
+    add_to_terran_like_GK(data_target,player);
+    
+   }
       const elem = document.getElementById(`div_change${player.name}`);
       elem.remove();
       
@@ -614,32 +630,22 @@ function filter_players(arr){
   POSITION.forEach(element => {
    
 
-    changement.innerHTML += innerfilter(element);
+    changement.innerHTML += cards_of_players(element);
   
   })
  
-    
+  
 
   
 }
-window.remove_hid = () =>{
-  div_form.classList.toggle('hidden')
-}
-
-// let get = get_arr();
-// submit_data(get)
-// window.ajout = () =>{
-//   // div_form.classList.remove('hidden');
-//   // submit_data(all_players);
-//   console.log('hi');
-  
 submit_data(all_players)
 
 function submit_data(array){
+  
   let count = 27;
   form.addEventListener('submit', (e)=>{
       e.preventDefault();
-      const player_name = Name.value
+      
       const player_url = url.value
       const player_logo = logo.value
       const player_pac = pac.value
@@ -653,10 +659,6 @@ function submit_data(array){
       const player_club = club.value
       const player_drib = drib.value
       const player_def = def.value
-
-  
-      console.log(player_name);
-      
       const obg = {
           "id":count,
           "name": player_name,
@@ -674,17 +676,16 @@ function submit_data(array){
           "defending":player_def,
           "physical": player_phy
         }
-        console.log(obg);
         
-        if(changement.children.length === 0 ){
-          console.log('hi');
-          array = '';
-          array = [];
-        console.log(array);
+        // if(changement.children.length === 0 ){
+        //   array = '';
+        //   array = [];
           
           
-        }
+        // // }
+
         
+
         count++;
         array.push(obg);
         
