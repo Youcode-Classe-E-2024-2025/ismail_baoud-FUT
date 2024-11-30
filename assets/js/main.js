@@ -12,7 +12,7 @@ let all_players = [
     pace: 85,
     shooting: 92,
     passing: 91,
-    passing: 95,
+    dribbling: 95,
     defending: 35,
     physical: 65,
   },
@@ -452,6 +452,13 @@ export function el(id) {
 // export function up_local(arr){
 //   localStorage.setItem("Players",JSON.stringify(arr))
 // }
+const hi = document.querySelectorAll('.hid')
+hi.forEach(element => {
+  console.log(element);
+  
+});
+  
+
 const form = document.querySelector("form");
 const Name = el("name");
 const url = el("url");
@@ -496,12 +503,14 @@ import {
   cards_of_players_after_filter,
 } from "../components/afichage.js";
 const changement = document.getElementById("changement");
-const id = document.querySelectorAll(".s");
+const id = document.querySelectorAll(".scale");
 // const delet_btn = document.getElementById('delet_btn');
 
 export function setText(id, text) {
   el(id).textContent = text;
 }
+
+
 consol_btn.addEventListener("click", () => {
   div_form.classList.toggle("hidden");
 });
@@ -512,9 +521,8 @@ edit_consol_btn.addEventListener("click", () => {
 el("btn_ajout").addEventListener("click", () => {
   div_form.classList.toggle("hidden");
 });
-let  id_x;
 let plays;
-let playrs;
+let inner_img;
 window.delet = (id) => {
   console.log(id, typeof id);
   if (typeof id === "number") {
@@ -523,9 +531,13 @@ window.delet = (id) => {
 
     add_players_to_changement();
   } else {
-    id.classList.remove('play')
-    id.innerHTML = "";
-    id.innerHTML = `<img class="w-16 m-auto" src="./assets/images/plus1.png" alt="">`;
+    // id.classList.remove('play')
+    // id.innerHTML = "";
+    inner_img = id.parentElement;
+    console.log(inner_img);
+    
+    id.remove();
+    inner_img.innerHTML = `<img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">`;
   }
 };
 
@@ -616,7 +628,7 @@ function add_players_to_changement() {
     changement.innerHTML += cards_of_players(element);
   });
 }
-
+let add_class;
 function filter_players(arr) {
   window.add = (id) => {
     let player = arr[id - 1];
@@ -640,7 +652,16 @@ function filter_players(arr) {
     } else {
       if (pos !== "GK") {
         add_to_terran(data_target, player);
-        plays = document.querySelectorAll(".play");
+        add_to_terran(data_target, player);
+        let _id = data_target.getAttribute('data-id');
+        add_class = document.querySelector(`[data-id="${_id}"]`)
+        add_class.firstChild.classList.add('play')
+        console.log(plays);
+        
+        // console.log();
+      // add_class.firstChild.classList.('play')
+
+        // plays = document.querySelectorAll(".play");
       } else {
         add_to_terran_like_GK(data_target, player);
         
@@ -650,7 +671,13 @@ function filter_players(arr) {
 
     if (pos !== "GK") {
       add_to_terran(data_target, player);
-     plays = document.querySelectorAll(".play");
+      let _id = data_target.getAttribute('data-id');
+      add_class = document.querySelector(`[data-id="${_id}"]`)
+      add_class.firstChild.classList.add('play')
+      console.log();
+      console.log(plays);
+
+    //  plays = document.querySelectorAll(".play");
     } else {
       add_to_terran_like_GK(data_target, player);
     }

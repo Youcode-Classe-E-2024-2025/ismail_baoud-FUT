@@ -4,25 +4,29 @@ import { el, setText , } from "../js/main.js";
 ////////////////////////////////////////////////// NORMAL PLAYERS
 
 export function add_to_terran(target, element){
-    target.innerHTML = `<div id="${element.nationality}" data-id="${element.id}" class="relative play w-20 h-20 hover:z-20">
-    <div class=" hi bg-cover flex flex-col items-center justify-center w-full h-full" style="background-image: url(assets/images/card1.png);">
+    target.innerHTML = `<div id="${element.nationality}" data-id="${element.id}" class="relative w-20 h-20">
+    <div class=" hi bg-cover flex flex-col items-center justify-center w-full h-full" style="background-image: url(assets/images/Capture_d_écran_2024-11-29_040710-removebg-preview.png);">
         <div class="w-20 h-full ">
         <div><img id="${element.id}"  class="w-11 self-center m-auto mb-0 mt-[6px]" src="" alt="">
     </div>
-    <div class="h-[20%] w-full flex flex-row text-white text-center mt-0">
+    <div class="h-[20%] w-full  text-white text-center mt-0  grid grid-cols-4">
     
-        <div class="w-[50%] items-start text-[4px] mt-[2px]  grid ml-4">
-            <span id="pac${element.name}"></span>
-            <span id="sho${element.name}"></span>
-            <span id="pas${element.name}"></span>
+        <div class="w-[50%] items-start text-[4px] mt-[2px]  col-start-2">
+            <span class="flex flex-row"><span id="pac${element.name}"></span><span class="ml-1">div</span></span>
+            <span class="flex flex-row"><span id="sho${element.name}"></span><span class="ml-1">  hand</span></span>
+            <span class="flex flex-row"><span id="pas${element.name}"></span><span class="ml-1">  kick</span></span>
+
         </div>
-        <div class="w-[50%]  mt-[2px] text-[4px] grid mr-7 ">
-            <span id="dri${element.name}"></span>
-            <span id="def${element.name}"></span>
-            <span id="phy${element.name}"></span>
+        <div class="w-[50%]  mt-[2px] text-[4px] grid col-start-3 ">
+            <div class="flex flex-row"><span id="dri${element.name}"></span><span class="ml-1">  ref</span></div>
+            <div class="flex flex-row"><span id="def${element.name}"></span><span class="ml-1">  spe</span></div>
+            <div class="flex flex-row"><span id="phy${element.name}"></span><span class="ml-1">  pos</span></div>
         </div>
     </div>
-    <button class="bg-red-300 w-5 h-5 rounded-[100%] absolute top-0 left-0" onclick="delet(${element.nationality})"></button>
+    <div id="hid" class="hidden">
+    <button" onclick="delet(${element.nationality})"><img class="w-3 h-3 absolute top-0 left-0" src="./assets/images/supprimer.png" alt=""></button>
+    </div>
+
   </div>`
   let player = el(`${element.id}`);
     player.src = element.photo;
@@ -54,7 +58,10 @@ export function add_to_terran_like_GK(target, element){
             <div class="flex flex-row"><span id="spe${element.name}"></span><span class="ml-1">  spe</span></div>
             <div class="flex flex-row"><span id="pos${element.name}"></span><span class="ml-1">  pos</span></div>
         </div>
-            <button class="bg-red-300 w-5 h-5 rounded-[100%] absolute top-0 left-0" onclick="delet(${element.nationality})"></button>
+    </div>
+    <div>
+    <button" onclick="delet(${element.nationality})"><img class="w-3 h-3 absolute top-0 left-0" src="./assets/images/supprimer.png" alt=""></button>
+    <button" onclick=""><img class="w-3 h-3 absolute top-0 right-0" src="./assets/images/editer.png" alt=""></button>
     </div>
   </div>`
   let player = el(`${element.id}`);
@@ -98,7 +105,7 @@ export function cards_of_players_after_filter(element) {
 
   export function cards_of_players(element) {
     return `
-      <div id="div_g1" class="relative bg-gray-100 rounded-lg mb-4 shadow-md flex items-center p-4 h-10  flex-row w-[95%] cursor-pointer">
+      <div id="div_g1" class="relative bg-gray-100 rounded-lg mb-4 shadow-md flex items-center p-4 h-10 flex-row w-[95%] cursor-pointer">
         <img class="w-10 h-10 bg-cover bg-center flex rounded-full mr-4" src="${element.photo}"></img>
         <div class="flex flex-row">
           <div id="div_g" class="flex justify-between items-center h-10">

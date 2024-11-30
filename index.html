@@ -6,17 +6,8 @@
     <title>FUT team</title>
     <link rel="stylesheet" href="./assets/css/output.css">
     <style>
-        .hi:hover{
-            scale: 2;
-            z-index: 50;
-            position: relative;
-            }
-            .hi{
-                transition: scale 300ms;
-            }
-             
-            .s:hover{
-                scale: 1.5;
+            .scale:hover{
+                scale: 1.1;
             }
             label{
                 display: block;
@@ -32,190 +23,150 @@
             input:focus{
                 background: #8be99e;
             }
-            #btn_ajout{
-                background-color:rgb(11, 153, 225);
-                transition:background-color 0.5s;
-            }
-            #btn_ajout:hover{
-                background-color:rgb(128, 189, 220)
-            }
-            #all_players{
-                background-color:rgb(11, 153, 225);
-                transition: background-color 0.5s;
-            }
-            #all_players:hover{
-                background-color:rgb(128, 189, 220)
-            }
             @media (min-width: 900px){
-            #terran{
-                background-image: url(/assets/images/stadium_background.png);
-              
+            
             }
-            #btn_ajout{
-                right: 25%;
-            }
-            #all_players{
-                right: 3%;
-            }
-            }
-            @media (min-width: 640px) and (max-width: 992px) {
-            #terran{
-                grid-column: 1 /span 3;
-                background-image: url(assets/images/stadium_background.png);
-              
-                
-            }
-            #f_c{
-                flex-direction: column;
-            }
-            #l_n{
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-            }
-            #div_g{
-                height: 4rem;
-            }
-            #div_g1{
-
-                height: 4rem;
-                width: 100%;
-            }
-            /* #img{
-                width: 1.5rem;
-            } */
-            #club{
-                width: 2rem;
-            }
-            #posi{
-                margin: 0;
-                padding: 0;
-            }
-            /* #change{
-                grid-column: 4 /span 3;
-            } */
-            #btn_ajout{
-                right: 30%;
-            }
-            }
+            @media (min-width: 640px) and (max-width: 992px) {}
+            
             @media (min-width: 510px) and (max-width: 640px) {
-            #btn_ajout{
-                left: 0%;
-            }
-            #all_players{
-                right: 0%;
-            }
-            #terran{
-                
-                position: absolute;
-                /* bottom: 0; */
-                grid-column: 1 /span 3;
-             
-  ;
-                background-image: url(./assets/images/téléchargement1.jpg);
-            
-            }   
-            
+         
             }
             @media (max-width: 510px){
-            #btn_ajout{
-                left: 0;
-            }
-            #all_players{
-                right: 0;
-            }
-            #terran{
-                background-image: url(./assets/images/téléchargement.jpg);
-
-            }   
+           
             }
             ::-webkit-scrollbar {
             width: 3px;
-            height: 3px; /* Height of the scrollbar (for horizontal scrollbars) */
-            }
+            height: 3px;
+        }
 
             ::-webkit-scrollbar-thumb {
-            background: rgba(23,23,23,1); /* Color of the scrollbar thumb */
-            border-radius: 5px; /* Rounded corners for the thumb */
+            background: rgba(23,23,23,1);
+            border-radius: 5px;
             }
-            .plus{
+            .plus:hover{
+                cursor: pointer;
+                border-radius: 100%;
+                box-shadow: 0 0 10px 0 rgb(203, 181, 181);
+            }
+            .play{
+                transition: transform 0.3s ease-in-out;
+            }
+            .play:hover{
+                transform: scale(1.7);
                 
             }
+            @keyframes flaming {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+            }
+            @keyframes flicker {
+                0% { text-shadow: 0 0 5px rgba(255, 69, 0, 0.8), 0 0 5px rgba(245, 45, 45, 0.8); }
+                100% { text-shadow: 0 0 5px rgba(255, 69, 0, 1), 0 0 10px rgb(254, 21, 21); }
+            }
+            .flaming-text {
+                background: linear-gradient(45deg, #b15635, #984f42, #8f6b3e, #a99a47);
+                background-size: 20rem 20rem;
+                -webkit-background-clip: text;
+                color: transparent;
+                animation: flaming 0.5s infinite, flicker 0.5s infinite;
+                font-size: 2rem;
+                font-weight:600;
+                letter-spacing: 3px;
 
+            }
             
+
             </style>
 
 </head>
-<body class="bg-cover bg-center h-full backdrop-blur-[2px]" style=" background-repeat: no-repeat; ">
-    <footer class="relative h-[10vh] w-[100%] bg-white">
-            <button id="btn_ajout" class="text-white absolute h-10 w-40 rounded-xl top-2 right-0">add player</button>
-            <button id="all_players" class="text-white absolute h-10 w-40 rounded-xl top-2 right-0">all players</button>
-    </footer>
-    <section class="relative w-[100vw] h-[100vh] flex flex-row  ">
-        <div id="terran" class="grid pl-16 h-[100vh] w-[60vw] bg-cover sm:static absolute justify-center items-center sm:bottom-0 aspect-[191/245] grid-rows-4 grid-cols-5" style=" background-repeat: no-repeat;"> 
-            <div id="GK" data-id="GK" class="s w-20 h-20  col-start-3 row-start-4 bg-cover">
-                <img class="plus w-16 m-aut" src="./assets/images/plus1.png" alt="">
-
-            </div>
-            <div id="LB" data-id="LB" class="s w-20  h-20  col-start-1 row-start-3 bg-cover">
-                <img class="plus w-16 m-auto drop-shadow" src="./assets/images/plus1.png" alt="">
+<body class="bg-cover bg-center h-[100vh] backdrop-blur-[2px]" style="  background-repeat: no-repeat; ">
 
 
-            </div>
-            <div id="CB" data-id="CB1" class="s w-20 h-20  col-start-2 row-start-3 bg-cover">
-                <img class=" plus w-16 m-auto" src="./assets/images/plus1.png" alt="">
-
-
-            </div>
-            <div id="CB" data-id="CB2" class="s w-20 h-20  col-start-4 row-start-3 bg-cover">
-                <img class="plus w-16 m-auto" src="./assets/images/plus1.png" alt="">
-
-
-            </div>
-            <div id="RB" data-id="RB" class="s w-20 h-20  col-start-5 row-start-3 bg-cover">
-                <img class="plus w-16 m-auto" src="./assets/images/plus1.png" alt="">
-
-
-            </div>
-            <div id="CM" data-id="CM1" class="s w-20 h-20  col-start-1 row-start-2 bg-cover">
-                <img class="plus w-16 m-auto" src="./assets/images/plus1.png" alt="">
-
-
-            </div>
-            <div id="CM" data-id="CM2" class="s w-20 h-20  col-start-3 row-start-2 bg-cover">
-                <img class="plus w-16 m-auto" src="./assets/images/plus1.png" alt="">
-
-
-            </div>
-            <div id="CM" data-id="CM3" class="s w-20 h-20  col-start-5 row-start-2 bg-cover">
-                <img class="plus w-16 m-auto" src="./assets/images/plus1.png" alt="">
-
-
-            </div>
-            <div id="LW" data-id="LW" class="s w-20 h-20  col-start-2 row-start-1 bg-cover">
-                <img class="plus w-16 m-auto" src="./assets/images/plus1.png" alt="">
-            </div>
-            <div id="ST" data-id="ST" class="s w-20 h-20  col-start-3 row-start-1 bg-cover">
-                <img class="plus w-16 m-auto block" src="./assets/images/plus1.png" alt="">
-
-            </div>
-            <div id="RW" data-id="RW" class="s w-20 h-20 bg-cover  col-start-4 row-start-1" >
-                <img class="plus w-16 m-auto" src="assets/images/plus1.png" alt="">
-
+    <nav class="bg-teal-800 shadow-md h-[10vh] sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+            <div class="relative flex items-center justify-between h-16">
+                <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                    <a href="#" class=""><img class="w-10" src="./assets/images/image.png" alt=""></a>
+                    <span><span class="text-red-300 pl-3 pr-3 text-[2rem] font-bold flaming-text">FLAMING</span><span class=" text-[2rem] font-bold  text-white">BALL</span>
+                </div>
+                <div class="hidden sm:block sm:ml-6">
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">Home</a>
+                        <a href="#" class="text-white px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">Matches</a>
+                        <a href="#" class="text-white px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">News</a>
+                        <button id="btn_ajout" class="text-white px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">add player</button>
+                        <button id="all_players" class="text-white px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">all players</button>
+                    </div>
+                </div>
             </div>
         </div>
+    </nav>
+    <section class="relative w-[99.90vw] h-[100vh] flex flex-row">
+        <div id="terran" class="grid pl-16 h-[80vh] w-[60vw] bg-cover bg-center sm:h-[100vh] md:h-[100%] lg:h-[100%] sm:static absolute justify-center items-center sm:bottom-0 aspect-[191/245] grid-rows-4 grid-cols-5" style=" background-image: url(/assets/images/stadium_background.png); background-repeat: no-repeat;"> 
+            <div id="GK" data-id="GK" class="scale w-20 h-20  col-start-3 row-start-4 bg-cover">
+                <img class="plus w-12 m-aut" src="./assets/images/plus1.png" alt="">
 
-        <div id="change" class=" w-[40vw] h-[100vh]  flex flex-row justify-center overflow-y-scroll items-center">
-            
+            </div>
+            <div id="LB" data-id="LB" class="scale w-20  h-20  col-start-1 row-start-3 bg-cover">
+                <img class="plus w-12 m-auto drop-shadow" src="./assets/images/plus1.png" alt="">
 
-            <div id="changement" class="pt-3 h-[100%] w-[100%] flex items-center justify-center flex-col" >
                 
             </div>
+            <div id="CB" data-id="CB1" class="scale w-20 h-20  col-start-2 row-start-3 bg-cover">
+                <img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">
+
+
+            </div>
+            <div id="CB" data-id="CB2" class="scale w-20 h-20  col-start-4 row-start-3 bg-cover">
+                <img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">
+
+
+            </div>
+            <div id="RB" data-id="RB" class="scale w-20 h-20  col-start-5 row-start-3 bg-cover">
+                <img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">
+
+
+            </div>
+            <div id="CM" data-id="CM1" class="scale w-20 h-20  col-start-1 row-start-2 bg-cover">
+                <img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">
+
+
+            </div>
+            <div id="CM" data-id="CM2" class="scale w-20 h-20  col-start-3 row-start-2 bg-cover">
+                <img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">
+
+
+            </div>
+            <div id="CM" data-id="CM3" class="scale w-20 h-20  col-start-5 row-start-2 bg-cover">
+                <img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">
+
+
+            </div>
+            <div id="LW" data-id="LW" class="scale w-20 h-20  col-start-2 row-start-1 bg-cover">
+                <img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">
+            </div>
+            <div id="ST" data-id="ST" class="scale w-20 h-20  col-start-3 row-start-1 bg-cover">
+                <img class="plus w-12 m-auto block" src="./assets/images/plus1.png" alt="">
+
+            </div>
+            <div id="RW" data-id="RW" class="scale w-20 h-20 bg-cover  col-start-4 row-start-1" >
+                <img class="plus w-12 m-auto" src="assets/images/plus1.png" alt="">
+
+            </div>
         </div>
-       </div>
-    </div>
+
+        <div id="change" class="   w-[40vw] h-[98vh] overflow-y-scroll  flex flex-col ">
+            
+            <div class="flex justify-centerh-[80vh]  items-center">
+                <div id="changement" class=" pt-4   w-[100%]" >
+                
+                </div>
+            </div>
+        </div>
+       
     </section>
-    <div id="form" class="add w-full h-full  hidden absolute left-0 top-0 justify-center  flex backdrop-blur items-center font-serif">
+    <div id="form" class="add w-full h-[100vh]  hidden absolute left-0 top-0 justify-center  flex backdrop-blur items-center font-serif">
         <form class="fade-in flex text-white items-center justify-center text-center left-1/3 top-1/4 border-x-gray-700  bg-gray-500  border-y-black border-8 col-span-1 h-auto w-96 rounded-2xl shadow-md">
 
           <div>
@@ -325,8 +276,21 @@
             </div>
         </form>
     </div>
-    <footer class="h-[10vh]  bg-white">
-    </footer>
+        <footer class="bg-gray-800 h-[10vh] text-white py-8">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="flex flex-wrap justify-between">
+                    <div class="w-full sm:w-auto text-center sm:text-left">
+                        <h3 class="text-lg font-semibold">FLAMING BALL</h3>
+                        <p class="text-sm text-gray-400 mt-2">&copy; 2024 ISMAIL BAOUD. All rights reserved.</p>
+                    </div>
+                    <div class="w-full sm:w-auto mt-6 sm:mt-0 text-center sm:text-right">
+                        <a href="#about" class="text-gray-300 hover:text-white mx-4">About</a>
+                        <a href="#privacy" class="text-gray-300 hover:text-white mx-4">Privacy Policy</a>
+                        <a href="#contact" class="text-gray-300 hover:text-white mx-4">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     <script  type="module" src="./assets/js/main.js"></script>
 </body>
 </html>
