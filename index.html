@@ -48,23 +48,20 @@
             }
             @media (min-width: 900px){
             #terran{
-                background-image: url(/assets/images/téléchargement.jpg);
+                background-image: url(/assets/images/stadium_background.png);
               
             }
             #btn_ajout{
-                right: 30%;
+                right: 25%;
             }
             #all_players{
-                right: 10%;
+                right: 3%;
             }
             }
             @media (min-width: 640px) and (max-width: 992px) {
             #terran{
-                position: absolute;
-                bottom: 0;
-                top: 10px;
                 grid-column: 1 /span 3;
-                background-image: url(assets/images/téléchargement.jpg);
+                background-image: url(assets/images/stadium_background.png);
               
                 
             }
@@ -94,9 +91,9 @@
                 margin: 0;
                 padding: 0;
             }
-            #change{
-                grid-column: 4 /span 6;
-            }
+            /* #change{
+                grid-column: 4 /span 3;
+            } */
             #btn_ajout{
                 right: 30%;
             }
@@ -112,7 +109,7 @@
                 
                 position: absolute;
                 /* bottom: 0; */
-                grid-column: 1 /span 6;
+                grid-column: 1 /span 3;
              
   ;
                 background-image: url(./assets/images/téléchargement1.jpg);
@@ -133,81 +130,85 @@
             }   
             }
             ::-webkit-scrollbar {
-            width: 5px;
-            height: 8px; /* Height of the scrollbar (for horizontal scrollbars) */
+            width: 3px;
+            height: 3px; /* Height of the scrollbar (for horizontal scrollbars) */
             }
 
             ::-webkit-scrollbar-thumb {
-            background: #000; /* Color of the scrollbar thumb */
+            background: rgba(23,23,23,1); /* Color of the scrollbar thumb */
             border-radius: 5px; /* Rounded corners for the thumb */
             }
+            .plus{
+                
+            }
+
+            
             </style>
 
-    
 </head>
-<body class="bg-cover bg-center h-full backdrop-blur-[2px]" style="background-image: url(./assets/images/stad.jpg); background-repeat: no-repeat; ">
-    <footer class="h-[100px] bg-white">
-        
+<body class="bg-cover bg-center h-full backdrop-blur-[2px]" style=" background-repeat: no-repeat; ">
+    <footer class="relative h-[10vh] w-[100%] bg-white">
+            <button id="btn_ajout" class="text-white absolute h-10 w-40 rounded-xl top-2 right-0">add player</button>
+            <button id="all_players" class="text-white absolute h-10 w-40 rounded-xl top-2 right-0">all players</button>
     </footer>
-    <section class="relative w-[100%] h-[100%] grid gap-2 sm:grid-rows-1 grid-rows-2 grid-cols-6 ">
-        <div id="terran" class="grid w-full sm:static absolute sm:bottom-0 row-start-2 sm:row-start-1 sm:col-start-2 sm:col-span-2 col-start-1 col-span-6 bg-cover aspect-[191/245] grid-rows-7 grid-cols-5" style=" background-repeat: no-repeat; margin: 50px 0px;"> 
-            <div id="GK" data-id="GK" class="s w-20 h-20  col-start-3 row-start-7 bg-cover">
-                <img class="w-16 m-auto" src="./assets/images/plus1.png" alt="">
+    <section class="relative w-[100vw] h-[100vh] flex flex-row  ">
+        <div id="terran" class="grid pl-16 h-[100vh] w-[60vw] bg-cover sm:static absolute justify-center items-center sm:bottom-0 aspect-[191/245] grid-rows-4 grid-cols-5" style=" background-repeat: no-repeat;"> 
+            <div id="GK" data-id="GK" class="s w-20 h-20  col-start-3 row-start-4 bg-cover">
+                <img class="plus w-16 m-aut" src="./assets/images/plus1.png" alt="">
 
             </div>
-            <div id="LB" data-id="LB" class="s w-20  h-20  col-start-1 row-start-6 bg-cover">
-                <img class="w-16 m-auto" src="./assets/images/plus1.png" alt="">
-
-
-            </div>
-            <div id="CB" data-id="CB1" class="s w-20 h-20  col-start-2 row-start-6 bg-cover">
-                <img class="w-16 m-auto" src="./assets/images/plus1.png" alt="">
+            <div id="LB" data-id="LB" class="s w-20  h-20  col-start-1 row-start-3 bg-cover">
+                <img class="plus w-16 m-auto drop-shadow" src="./assets/images/plus1.png" alt="">
 
 
             </div>
-            <div id="CB" data-id="CB2" class="s w-20 h-20  col-start-4 row-start-6 bg-cover">
-                <img class="w-16 m-auto" src="./assets/images/plus1.png" alt="">
+            <div id="CB" data-id="CB1" class="s w-20 h-20  col-start-2 row-start-3 bg-cover">
+                <img class=" plus w-16 m-auto" src="./assets/images/plus1.png" alt="">
 
 
             </div>
-            <div id="RB" data-id="RB" class="s w-20 h-20  col-start-5 row-start-6 bg-cover">
-                <img class="w-16 m-auto" src="./assets/images/plus1.png" alt="">
+            <div id="CB" data-id="CB2" class="s w-20 h-20  col-start-4 row-start-3 bg-cover">
+                <img class="plus w-16 m-auto" src="./assets/images/plus1.png" alt="">
 
 
             </div>
-            <div id="CM" data-id="CM1" class="s w-20 h-20  col-start-1 row-start-4 bg-cover">
-                <img class="w-16 m-auto" src="./assets/images/plus1.png" alt="">
+            <div id="RB" data-id="RB" class="s w-20 h-20  col-start-5 row-start-3 bg-cover">
+                <img class="plus w-16 m-auto" src="./assets/images/plus1.png" alt="">
 
 
             </div>
-            <div id="CM" data-id="CM2" class="s w-20 h-20  col-start-3 row-start-4 bg-cover">
-                <img class="w-16 m-auto" src="./assets/images/plus1.png" alt="">
+            <div id="CM" data-id="CM1" class="s w-20 h-20  col-start-1 row-start-2 bg-cover">
+                <img class="plus w-16 m-auto" src="./assets/images/plus1.png" alt="">
 
 
             </div>
-            <div id="CM" data-id="CM3" class="s w-20 h-20  col-start-5 row-start-4 bg-cover">
-                <img class="w-16 m-auto" src="./assets/images/plus1.png" alt="">
+            <div id="CM" data-id="CM2" class="s w-20 h-20  col-start-3 row-start-2 bg-cover">
+                <img class="plus w-16 m-auto" src="./assets/images/plus1.png" alt="">
 
 
             </div>
-            <div id="LW" data-id="LW" class="s w-20 h-20  col-start-2 row-start-2 bg-cover">
-                <img class="w-16 m-auto" src="./assets/images/plus1.png" alt="">
-            </div>
-            <div id="ST" data-id="ST" class="s w-20 h-20  col-start-3 row-start-2 bg-cover">
-                <img class="w-16 m-auto block" src="./assets/images/plus1.png" alt="">
+            <div id="CM" data-id="CM3" class="s w-20 h-20  col-start-5 row-start-2 bg-cover">
+                <img class="plus w-16 m-auto" src="./assets/images/plus1.png" alt="">
+
 
             </div>
-            <div id="RW" data-id="RW" class="s w-20 h-20 bg-cover  col-start-4 row-start-2" >
-                <img class="w-16 m-auto" src="assets/images/plus1.png" alt="">
+            <div id="LW" data-id="LW" class="s w-20 h-20  col-start-2 row-start-1 bg-cover">
+                <img class="plus w-16 m-auto" src="./assets/images/plus1.png" alt="">
+            </div>
+            <div id="ST" data-id="ST" class="s w-20 h-20  col-start-3 row-start-1 bg-cover">
+                <img class="plus w-16 m-auto block" src="./assets/images/plus1.png" alt="">
+
+            </div>
+            <div id="RW" data-id="RW" class="s w-20 h-20 bg-cover  col-start-4 row-start-1" >
+                <img class="plus w-16 m-auto" src="assets/images/plus1.png" alt="">
 
             </div>
         </div>
 
-        <div id="change" class=" mb-10 col-start-1 sm:col-start-4 col-span-6 sm:col-span-3 mt-32  flex flex-col h-96 justify-center overflow-y-scroll items-center">
-            <button id="btn_ajout" class="  text-white absolute h-10 w-40 rounded-xl right-54 top-12">add player</button>
-            <button id="all_players" class="  text-white absolute h-10 w-40 rounded-xl top-12">all players</button>
+        <div id="change" class=" w-[40vw] h-[100vh]  flex flex-row justify-center overflow-y-scroll items-center">
+            
 
-            <div id="changement" class="mt-auto h-96" >
+            <div id="changement" class="pt-3 h-[100%] w-[100%] flex items-center justify-center flex-col" >
                 
             </div>
         </div>
@@ -324,8 +325,7 @@
             </div>
         </form>
     </div>
-    <footer class="h-[100px] bg-white">
-
+    <footer class="h-[10vh]  bg-white">
     </footer>
     <script  type="module" src="./assets/js/main.js"></script>
 </body>

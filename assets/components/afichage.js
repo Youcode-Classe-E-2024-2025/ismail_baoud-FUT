@@ -68,26 +68,54 @@ export function add_to_terran_like_GK(target, element){
 }
 //////////////////////////////////////////////////////////  DISPLAY ALL PLAYERS      
 
- export function cards_of_players(element) {
+export function cards_of_players_after_filter(element) {
+  return `
+    <div id="div_g1" class="relative bg-gray-100 rounded-lg mb-4 shadow-md flex items-center p-4 h-10  flex-row w-[95%] cursor-pointer" onclick="add(${element.id})">
+      <img class="w-10 h-10 bg-cover bg-center flex rounded-full mr-4" src="${element.photo}"></img>
+      <div class="flex flex-row">
+        <div id="div_g" class="flex justify-between items-center h-10">
+            <span id="img" class="text-sm mr-2 w-20 m-auto font-semibold text-gray-800">${element.name}</span>
+            <div id="f_c" class="flex-row hidden lg:flex">
+              <span class="text-sm mr-2  w-5 pr-1 m-auto text-gray-600"><img src="${element.flag}"></span>
+              <span id="club" class="text-sm mr-2 w-20 m-auto text-gray-600">${element.club}</span>
+            </div >
+            <div id="l_n" class="flex flex-row w-20">
+                  <span class="text-sm w-4 text-gray-600"><img src="${element.logo}"></span>
+                  <span class="text-sm mr-2 w-10 m-auto text-gray-600">${element.nationality}</span>
+            </div>
+            <span id="posi" class="text-sm px-1 m-auto ml-6  border-black border-2 text-gray-600">${element.position}</span>
+        </div>
+      <div class="w-9">
+          <button type="button" id="delet_btn" class=" bg-red-300 absolute top-0 hover:scale-150 right-1  pl-2 pr-2 rounded-xl text-center text-xs text-white" onclick="delet(${element.id})">delet</button>
+          <button type="button" id="edit_btn" class=" bg-blue-300 absolute bottom-0 right-1  pl-3 pr-3 rounded-xl text-center text-xs text-white" onclick="edit(${element.id})">edit</button>
+      </div>
+      
+      </div>
+    </div>
+  `;
+}
+
+
+  export function cards_of_players(element) {
     return `
-      <div id="div_g1" class="bg-white rounded-lg mb-4 shadow-md flex items-center p-4 h-10  flex-row w-full cursor-pointer" onclick="add(${element.id})">
-        <img class="w-10 h-10 bg-cover bg-center flex rounded-full mr-4" src="${element.photo}""></img>
+      <div id="div_g1" class="relative bg-gray-100 rounded-lg mb-4 shadow-md flex items-center p-4 h-10  flex-row w-[95%] cursor-pointer">
+        <img class="w-10 h-10 bg-cover bg-center flex rounded-full mr-4" src="${element.photo}"></img>
         <div class="flex flex-row">
           <div id="div_g" class="flex justify-between items-center h-10">
-              <span id="img" class="text-sm mr-2 m-auto font-semibold text-gray-800">${element.name}</span>
+              <span id="img" class="text-sm mr-2 w-20 m-auto font-semibold text-gray-800">${element.name}</span>
               <div id="f_c" class="flex-row hidden lg:flex">
-                <span class="text-sm mr-2  w-6 m-auto text-gray-600"><img src="${element.flag}"></span>
+                <span class="text-sm mr-2  w-5 pr-1 m-auto text-gray-600"><img src="${element.flag}"></span>
                 <span id="club" class="text-sm mr-2 w-20 m-auto text-gray-600">${element.club}</span>
               </div >
-              <div id="l_n" class="flex flex-row">
-                    <span class="text-sm w-4 m-auto  mr-5 text-gray-600"><img src="${element.logo}"></span>
-                    <span class="text-sm mr-2 w-16 m-auto text-gray-600">${element.nationality}</span>
+              <div id="l_n" class="flex flex-row w-20">
+                    <span class="text-sm w-4 text-gray-600"><img src="${element.logo}"></span>
+                    <span class="text-sm mr-2 w-10 m-auto text-gray-600">${element.nationality}</span>
               </div>
-              <span id="posi" class="text-sm mr-2 m-auto px-3 ml-4 border-black border-2 text-gray-600">${element.position}</span>
+              <span id="posi" class="text-sm px-1 m-auto ml-6  border-black border-2 text-gray-600">${element.position}</span>
           </div>
-        <div>
-            <button type="button" id="delet_btn" class=" bg-red-300  pl-2 pr-2 rounded-xl text-center text-xs text-white" onclick="delet(${element.id})">delet</button>
-            <button type="button" id="edit_btn" class=" bg-blue-300  pl-3 pr-3 rounded-xl text-center text-xs text-white" onclick="edit(${element.id})">edit</button>
+        <div class="w-9">
+            <button type="button" id="delet_btn" class=" bg-red-300 absolute top-0 hover:scale-150 right-1  pl-2 pr-2 rounded-xl text-center text-xs text-white" onclick="delet(${element.id})">delet</button>
+            <button type="button" id="edit_btn" class=" bg-blue-300 absolute bottom-0 right-1  pl-3 pr-3 rounded-xl text-center text-xs text-white" onclick="edit(${element.id})">edit</button>
         </div>
         
         </div>

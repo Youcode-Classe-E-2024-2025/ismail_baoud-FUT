@@ -258,7 +258,7 @@ let all_players = [
     id: 16,
     name: "N'Golo Kanté",
     photo: "https://cdn.sofifa.net/players/215/914/25_120.png",
-    position: "CDM",
+    position: "CM",
     nationality: "France",
     flag: "https://cdn.sofifa.net/flags/fr.png",
     club: "Al-Ittihad",
@@ -493,6 +493,7 @@ import {
   cards_of_players,
   add_to_terran,
   add_to_terran_like_GK,
+  cards_of_players_after_filter,
 } from "../components/afichage.js";
 const changement = document.getElementById("changement");
 const id = document.querySelectorAll(".s");
@@ -511,7 +512,9 @@ edit_consol_btn.addEventListener("click", () => {
 el("btn_ajout").addEventListener("click", () => {
   div_form.classList.toggle("hidden");
 });
-
+let  id_x;
+let plays;
+let playrs;
 window.delet = (id) => {
   console.log(id, typeof id);
   if (typeof id === "number") {
@@ -520,7 +523,7 @@ window.delet = (id) => {
 
     add_players_to_changement();
   } else {
-    // const hi = document(`${id}`);
+    id.classList.remove('play')
     id.innerHTML = "";
     id.innerHTML = `<img class="w-16 m-auto" src="./assets/images/plus1.png" alt="">`;
   }
@@ -619,12 +622,12 @@ function filter_players(arr) {
     let player = arr[id - 1];
 
     // let id_data;
-    const plays = document.querySelectorAll(".play");
-     console.log(plays);
+     plays = Array.from(document.querySelectorAll(".play"));
+    //  console.log(plays);
      if (plays.length > 0) {
       
      
-    const isExist = Array.from(plays).find(
+    const isExist = plays.find(
       (el) => {
         console.log(id, el.getAttribute("data-id"));
         return el.getAttribute("data-id") == player.id
@@ -637,13 +640,17 @@ function filter_players(arr) {
     } else {
       if (pos !== "GK") {
         add_to_terran(data_target, player);
+        plays = document.querySelectorAll(".play");
       } else {
         add_to_terran_like_GK(data_target, player);
+        
       }
     }
   }else{
+
     if (pos !== "GK") {
       add_to_terran(data_target, player);
+     plays = document.querySelectorAll(".play");
     } else {
       add_to_terran_like_GK(data_target, player);
     }
@@ -655,7 +662,7 @@ function filter_players(arr) {
 
   changement.innerHTML = "";
   POSITION.forEach((element) => {
-    changement.innerHTML += cards_of_players(element);
+    changement.innerHTML += cards_of_players_after_filter(element);
   });
 }
 submit_data(all_players);
