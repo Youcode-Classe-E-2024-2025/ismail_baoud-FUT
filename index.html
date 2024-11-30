@@ -17,11 +17,12 @@
                 color: black;
                 text-align: center;
                 outline: none;
+                margin: 10px;
                 
             
             }
             input:focus{
-                background: #8be99e;
+                background: #ade0b7;
             }
             @media (min-width: 900px){
             
@@ -77,6 +78,14 @@
             }
             
 
+            @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+            }
+            .fade-in {
+                animation: fadeIn 1s ease-in-out;
+            }
+
             </style>
 
 </head>
@@ -86,11 +95,11 @@
     <nav class="bg-teal-800 shadow-md h-[10vh] sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div class="relative flex items-center justify-between h-16">
-                <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                <div class=" flex items-center justify-center sm:items-stretch sm:justify-start">
                     <a href="#" class=""><img class="w-10" src="./assets/images/image.png" alt=""></a>
                     <span><span class="text-red-300 pl-3 pr-3 text-[2rem] font-bold flaming-text">FLAMING</span><span class=" text-[2rem] font-bold  text-white">BALL</span>
                 </div>
-                <div class="hidden sm:block sm:ml-6">
+                <div class="">
                     <div class="flex space-x-4">
                         <a href="#" class="text-white px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">Home</a>
                         <a href="#" class="text-white px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">Matches</a>
@@ -104,53 +113,53 @@
     </nav>
     <section class="relative w-[99.90vw] h-[100vh] flex flex-row">
         <div id="terran" class="grid pl-16 h-[80vh] w-[60vw] bg-cover bg-center sm:h-[100vh] md:h-[100%] lg:h-[100%] sm:static absolute justify-center items-center sm:bottom-0 aspect-[191/245] grid-rows-4 grid-cols-5" style=" background-image: url(/assets/images/stadium_background.png); background-repeat: no-repeat;"> 
-            <div id="GK" data-id="GK" class="scale w-20 h-20  col-start-3 row-start-4 bg-cover">
+            <div id="GK" data-id="GK" class="scale w-20 h-20 m-auto  col-start-3 row-start-4 bg-cover">
                 <img class="plus w-12 m-aut" src="./assets/images/plus1.png" alt="">
 
             </div>
-            <div id="LB" data-id="LB" class="scale w-20  h-20  col-start-1 row-start-3 bg-cover">
+            <div id="LB" data-id="LB" class="scale w-20  h-20 m-auto  col-start-1 row-start-3 bg-cover">
                 <img class="plus w-12 m-auto drop-shadow" src="./assets/images/plus1.png" alt="">
 
                 
             </div>
-            <div id="CB" data-id="CB1" class="scale w-20 h-20  col-start-2 row-start-3 bg-cover">
+            <div id="CB" data-id="CB1" class="scale w-20 h-20 m-auto  col-start-2 row-start-3 bg-cover">
                 <img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">
 
 
             </div>
-            <div id="CB" data-id="CB2" class="scale w-20 h-20  col-start-4 row-start-3 bg-cover">
+            <div id="CB" data-id="CB2" class="scale w-20 h-20 m-auto  col-start-4 row-start-3 bg-cover">
                 <img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">
 
 
             </div>
-            <div id="RB" data-id="RB" class="scale w-20 h-20  col-start-5 row-start-3 bg-cover">
+            <div id="RB" data-id="RB" class="scale w-20 h-20 m-auto  col-start-5 row-start-3 bg-cover">
                 <img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">
 
 
             </div>
-            <div id="CM" data-id="CM1" class="scale w-20 h-20  col-start-1 row-start-2 bg-cover">
+            <div id="CM" data-id="CM1" class="scale w-20 h-20 m-auto  col-start-1 row-start-2 bg-cover">
                 <img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">
 
 
             </div>
-            <div id="CM" data-id="CM2" class="scale w-20 h-20  col-start-3 row-start-2 bg-cover">
+            <div id="CM" data-id="CM2" class="scale w-20 h-20 m-auto  col-start-3 row-start-2 bg-cover">
                 <img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">
 
 
             </div>
-            <div id="CM" data-id="CM3" class="scale w-20 h-20  col-start-5 row-start-2 bg-cover">
+            <div id="CM" data-id="CM3" class="scale w-20 h-20 m-auto  col-start-5 row-start-2 bg-cover">
                 <img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">
 
 
             </div>
-            <div id="LW" data-id="LW" class="scale w-20 h-20  col-start-2 row-start-1 bg-cover">
+            <div id="LW" data-id="LW" class="scale w-20 h-20 m-auto  col-start-2 row-start-1 bg-cover">
                 <img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">
             </div>
             <div id="ST" data-id="ST" class="scale w-20 h-20  col-start-3 row-start-1 bg-cover">
                 <img class="plus w-12 m-auto block" src="./assets/images/plus1.png" alt="">
 
             </div>
-            <div id="RW" data-id="RW" class="scale w-20 h-20 bg-cover  col-start-4 row-start-1" >
+            <div id="RW" data-id="RW" class="scale w-20 h-20 m-auto bg-cover  col-start-4 row-start-1" >
                 <img class="plus w-12 m-auto" src="assets/images/plus1.png" alt="">
 
             </div>
@@ -166,115 +175,92 @@
         </div>
        
     </section>
-    <div id="form" class="add w-full h-[100vh]  hidden absolute left-0 top-0 justify-center  flex backdrop-blur items-center font-serif">
-        <form class="fade-in flex text-white items-center justify-center text-center left-1/3 top-1/4 border-x-gray-700  bg-gray-500  border-y-black border-8 col-span-1 h-auto w-96 rounded-2xl shadow-md">
+    <div id="form" class="add w-full h-[110vh]  hidden absolute left-0 top-0 justify-center  flex backdrop-blur items-center font-serif">
+        <form id="form" class="fade-in flex flex-col items-center justify-center bg-[#4CAF50] text-white  h-[70%] w-[60%] p-6 rounded-3xl shadow-lg ">
 
-          <div>
-            <div  class="flex flex-row ">
-                <div class="flex items-center flex-col text-center">
-                    <label >name of player :</label>
-                    <input class="" id="name" type="text">
-                    <label>photo url: </label>
-                    <input id="url" type="text">
-                    <label>logo</label>
-                    <input  id="logo" type="text">
-                    <label>country</label>
-                    <input id="country" type="text">
-                    <label>flag</label>
-                    <input id="flag" type="text">           
-                    <label>club</label>
-                    <input id="club" type="text">
-                    <label>position</label>
-                    <select class="text-black text-center w-[100%]" name="position" id="position">
-                        <option class="text-black" name="position" value="GK">GK</option>
-                        <option class="text-black" name="position" value="RB">RB</option>
-                        <option class="text-black" name="position" value="CB">CB</option>
-                        <option class="text-black" name="position" value="LB">LB</option>
-                        <option class="text-black" name="position" value="CM">CM</option>
-                        <option class="text-black" name="position" value="RW">RW</option>
-                        <option class="text-black" name="position" value="ST">ST</option>
-                        <option class="text-black" name="position" value="LW">LW</option>
-                    </select>
-                    
-              </div>
-               <div class="flex items-center flex-col">
-                <label>pac :</label>
-                <input class="w-[50%]" min="1" class="w-[50%]" id="pac" type="number">
-                <label>pos</label>
-                <input class="w-[50%]" min="1" class="w-[50%]" id="pas" type="number">
-                <label>def</label>
-                <input class="w-[50%]" min="1" class="w-[50%]" id="def" type="number">
-                <label>phy</label>
-                <input class="w-[50%]" min="1" class="w-[50%]" id="phy" type="number">
-                <label>sho</label>
-                <input class="w-[50%]" min="1" id="sho" type="number">
-                <label>rat</label>
-                <input class="w-[50%]" min="1" id="rat" type="number">
-                <label>drib</label>
-                <input class="w-[50%]" min="1" id="drib" type="text">
-                
-               </div>
-          </div>
-            
-            <button class="inline ease-in-out w-24 h-8 bg-green-500 rounded-3xl mt-1 mb-3">add player</button>
-            <button id="consol_btn" type="button" class="inline ease-in-out w-24 h-8 bg-red-500 rounded-3xl mt-1 mb-3">cansel</button>
-
+            <h2 class="text-2xl font-bold text-center text-white mb-4">ADD NEW PlAYER</h2>
+    
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+                <div>
+                    <input id="name" placeholder="PlAYER NAME" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="url" placeholder="PHOTO URL" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="logo" placeholder="LOGO URL" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="country" placeholder="COUNTRY" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="flag" placeholder="FLAG URL" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="club" placeholder="CLUB" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                </div>
+        
+                <div class="">
+                    <input id="pac" placeholder="PACE" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="pas" placeholder="PASSING" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="def" placeholder="DEFENDING" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="phy" placeholder="PHYSICAL" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="sho" placeholder="SHOOTING" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="drib" placeholder="DRIBBLING" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                </div>
+            </div>
+    
+            <div class="w-full text-center mt-4">
+                <select id="position" class="p-3 w-1/2 sm:w-1/3 md:w-1/4 mx-auto rounded-xl text-black bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300">
+                    <option value="GK">goalkeeper (GK)</option>
+                    <option value="RB">right back (RB)</option>
+                    <option value="CB">center back (CB)</option>
+                    <option value="LB">left back (LB)</option>
+                    <option value="CM">center mid (CM)</option>
+                    <option value="RW">right wing (RW)</option>
+                    <option value="ST">striker (ST)</option>
+                    <option value="LW">left wing (LW)</option>
+                </select>
+            </div>
+            <div class="flex gap-6 w-full justify-center mt-4">
+                <button class="w-40 py-2 px-4 bg-blue-400  text-white rounded-full hover:bg-blue-500 active:bg-white transition">ADD PLAYER</button>
+                <button type="button" id="consol_btn" class="w-40 py-2 px-4 bg-red-600 text-white rounded-full hover:bg-red-700 transition">CANCEL</button>
             </div>
         </form>
     </div>
-    <div id="div_edit_form" class="add w-full h-full  hidden absolute left-0 top-0 justify-center  flex backdrop-blur items-center font-serif">
-        <form id="edit_form" class="fade-in flex text-white items-center justify-center text-center left-1/3 top-1/4 border-x-gray-700  bg-gray-500  border-y-black border-8 col-span-1 h-auto w-96 rounded-2xl shadow-md">
+    <div id="div_edit_form" class="add w-full h-[110vh] hidden   absolute left-0 top-0 justify-center  flex backdrop-blur items-center font-serif">
+        <form id="edit_form" class="fade-in flex flex-col items-center justify-center bg-[#4CAF50] text-white  h-[70%] w-[60%] p-6 rounded-3xl shadow-lg ">
 
-          <div>
-            <div  class="flex flex-row ">
-                <div class="flex items-center flex-col">
-                    <label >name of player :</label>
-                    <input  id="new_name" type="text">
-                    <label>photo url: </label>
-                    <input id="new_url" type="text">
-                    <label>logo</label>
-                    <input  id="new_logo" type="text">
-                    <label>country</label>
-                    <input id="new_country" type="text">
-                    <label>flag</label>
-                    <input id="new_flag" type="text">           
-                    <label>club</label>
-                    <input id="new_club" type="text">
-                    <label>position</label>
-                    <select class="text-black mt-10" name="position" id="new_position">
-                        <option class="text-black" name="position" value="GK">GK</option>
-                        <option class="text-black" name="position" value="RB">RB</option>
-                        <option class="text-black" name="position" value="CB">CB</option>
-                        <option class="text-black" name="position" value="LB">LB</option>
-                        <option class="text-black" name="position" value="CM">CM</option>
-                        <option class="text-black" name="position" value="RW">RW</option>
-                        <option class="text-black" name="position" value="ST">ST</option>
-                        <option class="text-black" name="position" value="LW">LW</option>
-                    </select>
-                    
-              </div>
-               <div class="flex items-center flex-col">
-                <label>pac :</label>
-                <input class="w-[50%]" class="w-[50%]" id="new_pac" type="number">
-                <label>pos</label>
-                <input class="w-[50%]" class="w-[50%]" id="new_pas" type="number">
-                <label>def</label>
-                <input class="w-[50%]" class="w-[50%]" id="new_def" type="number">
-                <label>phy</label>
-                <input class="w-[50%]" class="w-[50%]" id="new_phy" type="number">
-                <label>sho</label>
-                <input class="w-[50%]" id="new_sho" type="number">
-                <label>drib</label>
-                <input class="w-[50%]" id="new_drib" type="text">
-                
-               </div>
-          </div>
-            
-            <button class="inline ease-in-out w-24 h-8 bg-green-500 rounded-3xl mt-1 mb-3">edit player</button>
-            <button id="edit_consol_btn" type="button" class=" inline ease-in-out w-24 h-8 bg-red-500 rounded-3xl mt-1 mb-3">cansel</button>
-
+            <h2 class="text-2xl font-bold text-center text-white mb-4">Edit PLAYER INFOS</h2>
+    
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+                <div>
+                    <input id="new_name" placeholder="PlAYER NAME" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="new_url" placeholder="PHOTO URL" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="new_logo" placeholder="LOGO URL" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="new_country" placeholder="COUNTRY" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="new_flag" placeholder="FLAG URL" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="new_club" placeholder="CLUB" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                </div>
+        
+                <div class="">
+                    <input id="new_pac" placeholder="PACE" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="new_pas" placeholder="PASSING" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="new_def" placeholder="DEFENDING" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="new_phy" placeholder="PHYSICAL" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="new_sho" placeholder="SHOOTING" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="new_drib" placeholder="DRIBBLING" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                </div>
+            </div>
+    
+            <div class="w-full text-center mt-4">
+                <select id="new_position" class="p-3 w-1/2 sm:w-1/3 md:w-1/4 mx-auto rounded-xl text-black bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300">
+                    <option value="GK">goalkeeper (GK)</option>
+                    <option value="RB">right back (RB)</option>
+                    <option value="CB">center back (CB)</option>
+                    <option value="LB">left back (LB)</option>
+                    <option value="CM">center mid (CM)</option>
+                    <option value="RW">right wing (RW)</option>
+                    <option value="ST">striker (ST)</option>
+                    <option value="LW">left wing (LW)</option>
+                </select>
+            </div>
+            <div class="flex gap-6 w-full justify-center mt-4">
+                <button class="w-4O py-2 px-4 bg-blue-400  text-white rounded-full hover:bg-blue-500 active:bg-white transition">Edit Player</button>
+                <button type="button" id="edit_consol_btn" class="w-40 py-2 px-4 bg-red-400 text-white rounded-full hover:bg-red-500 transition">Cancel</button>
             </div>
         </form>
+    
     </div>
         <footer class="bg-gray-800 h-[10vh] text-white py-8">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -284,9 +270,9 @@
                         <p class="text-sm text-gray-400 mt-2">&copy; 2024 ISMAIL BAOUD. All rights reserved.</p>
                     </div>
                     <div class="w-full sm:w-auto mt-6 sm:mt-0 text-center sm:text-right">
-                        <a href="#about" class="text-gray-300 hover:text-white mx-4">About</a>
-                        <a href="#privacy" class="text-gray-300 hover:text-white mx-4">Privacy Policy</a>
-                        <a href="#contact" class="text-gray-300 hover:text-white mx-4">Contact</a>
+                        <a href="#" class="text-gray-300 hover:text-white mx-4">About</a>
+                        <a href="#" class="text-gray-300 hover:text-white mx-4">Privacy Policy</a>
+                        <a href="#" class="text-gray-300 hover:text-white mx-4">Contact</a>
                     </div>
                 </div>
             </div>

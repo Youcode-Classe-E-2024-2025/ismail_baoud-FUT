@@ -471,7 +471,6 @@ const consol_btn = el("consol_btn");
 const edit_consol_btn = el("edit_consol_btn");
 
 const sho = el("sho");
-const rat = el("rat");
 const logo = el("logo");
 const position = el("position");
 const country = el("country");
@@ -705,7 +704,6 @@ function submit_data(array) {
     const player_pas = pas.value;
     const player_phy = phy.value;
     const player_sho = sho.value;
-    const player_rat = rat.value;
     const player_position = position.value;
     const player_country = country.value;
     const player_flag = flag.value;
@@ -742,7 +740,7 @@ function submit_data(array) {
       alert("Physical must be a number between 1 and 100.");
       return;
     }
-    if (!statR_regex.test(player_sho) || player_sho < 1 || player_sho > 100) {
+    if (!stat_regex.test(player_sho) || player_sho < 1 || player_sho > 100) {
       alert("Shooting must be a number between 1 and 100.");
       return;
     }
@@ -758,10 +756,6 @@ function submit_data(array) {
       alert("Defending must be a number between 1 and 100.");
       return;
     }
-    if (!player_position || !player_country || !player_flag || !player_club) {
-      alert("Please fill in all required fields.");
-      return;
-    }
 
 
     const obg = {
@@ -773,7 +767,6 @@ function submit_data(array) {
       flag: player_flag,
       club: player_club,
       logo: player_logo,
-      rating: player_rat,
       pace: player_pac,
       shooting: player_sho,
       passing: player_pas,

@@ -92,10 +92,6 @@ export function cards_of_players_after_filter(element) {
             </div>
             <span id="posi" class="text-sm px-1 m-auto ml-6  border-black border-2 text-gray-600">${element.position}</span>
         </div>
-      <div class="w-9">
-          <button type="button" id="delet_btn" class=" bg-red-300 absolute top-0 hover:scale-150 right-1  pl-2 pr-2 rounded-xl text-center text-xs text-white" onclick="delet(${element.id})">delet</button>
-          <button type="button" id="edit_btn" class=" bg-blue-300 absolute bottom-0 right-1  pl-3 pr-3 rounded-xl text-center text-xs text-white" onclick="edit(${element.id})">edit</button>
-      </div>
       
       </div>
     </div>
