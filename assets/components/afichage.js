@@ -61,7 +61,6 @@ export function add_to_terran_like_GK(target, element){
     </div>
     <div>
     <button" onclick="delet(${element.nationality})"><img class="w-3 h-3 absolute top-0 left-0" src="./assets/images/supprimer.png" alt=""></button>
-    <button" onclick=""><img class="w-3 h-3 absolute top-0 right-0" src="./assets/images/editer.png" alt=""></button>
     </div>
   </div>`
   let player = el(`${element.id}`);
@@ -77,7 +76,7 @@ export function add_to_terran_like_GK(target, element){
 
 export function cards_of_players_after_filter(element) {
   return `
-    <div id="div_g1" class="relative bg-gray-100 rounded-lg mb-4 shadow-md flex items-center p-4 h-10  flex-row w-[95%] cursor-pointer" onclick="add(${element.id})">
+    <div id="div_g1" class="relative bg-gray-100 rounded-lg m-auto mb-4 shadow-md flex items-center p-4 h-10  flex-row w-[95%] cursor-pointer" onclick="add(${element.id})">
       <img class="w-10 h-10 bg-cover bg-center flex rounded-full mr-4" src="${element.photo}"></img>
       <div class="flex flex-row">
         <div id="div_g" class="flex justify-between items-center h-10">
@@ -101,7 +100,7 @@ export function cards_of_players_after_filter(element) {
 
   export function cards_of_players(element) {
     return `
-      <div id="div_g1" class="relative bg-gray-100 rounded-lg mb-4 shadow-md flex items-center p-4 h-10 flex-row w-[95%] cursor-pointer">
+      <div id="div_g1" class="relative bg-gray-100 rounded-lg mb-4 m-auto shadow-md flex items-center p-4 h-10 flex-row w-[95%] cursor-pointer">
         <img class="w-10 h-10 bg-cover bg-center flex rounded-full mr-4" src="${element.photo}"></img>
         <div class="flex flex-row">
           <div id="div_g" class="flex justify-between items-center h-10">

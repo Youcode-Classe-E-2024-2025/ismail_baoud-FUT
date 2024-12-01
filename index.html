@@ -24,21 +24,105 @@
             input:focus{
                 background: #ade0b7;
             }
-            @media (min-width: 900px){
             
+            @media (max-width: 1250px){
+                #f_c{
+                    display: none;
+                }
             }
-            @media (min-width: 640px) and (max-width: 992px) {}
+            @media (max-width: 1000px){
+                .on{
+                    display: flex;
+                    flex-direction: column;
+                }
+                #terran{
+                    width: 100vw;
+                    height: 60vh;
+                }
+                #change{
+                    width: 100vw;
+                    height: 40vh;
+                    background: #f9f9f9;
+                }
+                
+                .scale{
+                    width: 3rem;
+                }
+                #f_c{
+                    display: flex;
+                }
+                #changement{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+                #div_g1{
+                    width: 80vw;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                #matches,#news{
+                    display: none;
+                }
+
+
+            }
+            @media (max-width: 640px){
+               .on{
+                display: grid;
+                grid-template-rows: repeat(2,1fr);
+               }
+               #terran{
+                grid-row: 1;
+                height: 60vh;
+               }
+               #change{
+                grid-row: 2;
+                
+               }
+               #div_g1{
+                    width: 100vw;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .menu{
+                    display: none;
+                }
+                .scale{
+                    width: 2rem;
+                }
+                #navbar{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+            @media (max-width: 320px){
+                /* #div_g1{
+                    width: 100vw;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    height: 2rem;
+                    margin-bottom: 5px;
+                } */
+               #l_n{
+                display: none;
+
+               }
+
+            }
             
-            @media (min-width: 510px) and (max-width: 640px) {
-         
-            }
-            @media (max-width: 510px){
-           
-            }
+
             ::-webkit-scrollbar {
             width: 3px;
             height: 3px;
         }
+        
 
             ::-webkit-scrollbar-thumb {
             background: rgba(23,23,23,1);
@@ -92,18 +176,18 @@
 <body class="bg-cover bg-center h-[100vh] backdrop-blur-[2px]" style="  background-repeat: no-repeat; ">
 
 
-    <nav class="bg-teal-800 shadow-md h-[10vh] sticky top-0 z-50">
+    <nav class="navbar bg-teal-800 shadow-md w-[100vw] h-[10vh] sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-            <div class="relative flex items-center justify-between h-16">
+            <div id="navbar" class="relative flex items-center justify-between h-16">
                 <div class=" flex items-center justify-center sm:items-stretch sm:justify-start">
-                    <a href="#" class=""><img class="w-10" src="./assets/images/image.png" alt=""></a>
+                    <a href="#" class=""><img class="w-10" src="./assets/images/image.png" alt="this is the logo of web is logo of football"></a>
                     <span><span class="text-red-300 pl-3 pr-3 text-[2rem] font-bold flaming-text">FLAMING</span><span class=" text-[2rem] font-bold  text-white">BALL</span>
                 </div>
-                <div class="">
-                    <div class="flex space-x-4">
+                <div >
+                    <div class="menu space-x-4 ">
                         <a href="#" class="text-white px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">Home</a>
-                        <a href="#" class="text-white px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">Matches</a>
-                        <a href="#" class="text-white px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">News</a>
+                        <a href="#" id="matches" class="text-white px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">Matches</a>
+                        <a href="#" id="news" class="text-white  px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">News</a>
                         <button id="btn_ajout" class="text-white px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">add player</button>
                         <button id="all_players" class="text-white px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">all players</button>
                     </div>
@@ -111,8 +195,8 @@
             </div>
         </div>
     </nav>
-    <section class="relative w-[99.90vw] h-[100vh] flex flex-row">
-        <div id="terran" class="grid pl-16 h-[80vh] w-[60vw] bg-cover bg-center sm:h-[100vh] md:h-[100%] lg:h-[100%] sm:static absolute justify-center items-center sm:bottom-0 aspect-[191/245] grid-rows-4 grid-cols-5" style=" background-image: url(/assets/images/stadium_background.png); background-repeat: no-repeat;"> 
+    <section class="on relative w-[99.90vw] h-[100vh] flex ">
+        <div id="terran" class="grid h-[80vh] w-[60vw] bg-cover bg-center sm:h-[100vh] md:h-[100%] lg:h-[100%] sm:static justify-center items-center sm:bottom-0 aspect-[191/245] grid-rows-4 grid-cols-5" style=" background-image: url(/assets/images/stadium_background.png); background-repeat: no-repeat;"> 
             <div id="GK" data-id="GK" class="scale w-20 h-20 m-auto  col-start-3 row-start-4 bg-cover">
                 <img class="plus w-12 m-aut" src="./assets/images/plus1.png" alt="">
 
@@ -155,7 +239,7 @@
             <div id="LW" data-id="LW" class="scale w-20 h-20 m-auto  col-start-2 row-start-1 bg-cover">
                 <img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">
             </div>
-            <div id="ST" data-id="ST" class="scale w-20 h-20  col-start-3 row-start-1 bg-cover">
+            <div id="ST" data-id="ST" class="scale w-20 h-20 m-auto  col-start-3 row-start-1 bg-cover">
                 <img class="plus w-12 m-auto block" src="./assets/images/plus1.png" alt="">
 
             </div>
@@ -167,7 +251,7 @@
 
         <div id="change" class="   w-[40vw] h-[98vh] overflow-y-scroll  flex flex-col ">
             
-            <div class="flex justify-centerh-[80vh]  items-center">
+            <div class="flex justify-center  items-center">
                 <div id="changement" class=" pt-4   w-[100%]" >
                 
                 </div>
