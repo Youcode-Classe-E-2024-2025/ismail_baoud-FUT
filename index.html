@@ -26,8 +26,11 @@
             }
             
             @media (max-width: 1250px){
-                #f_c{
+                #f_c{   
                     display: none;
+                }
+                .ball{
+                    font-size: 2rem;
                 }
             }
             @media (max-width: 1000px){
@@ -66,6 +69,9 @@
                 #matches,#news{
                     display: none;
                 }
+                .ball{
+                    font-size: 2rem;
+                }
 
 
             }
@@ -88,16 +94,13 @@
                     justify-content: center;
                     align-items: center;
                 }
-                .menu{
-                    display: none;
-                }
                 .scale{
                     width: 2rem;
                 }
-                #navbar{
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                .ball{
+                    font-size: 1rem;
+                    font-weight:300;
+                    letter-spacing: 1px;
                 }
             }
             @media (max-width: 320px){
@@ -113,6 +116,9 @@
                #l_n{
                 display: none;
 
+               }
+               .flaming{
+                font-size: 1rem;
                }
 
             }
@@ -146,10 +152,17 @@
             100% { background-position: 0% 50%; }
             }
             @keyframes flicker {
-                0% { text-shadow: 0 0 5px rgba(255, 69, 0, 0.8), 0 0 5px rgba(245, 45, 45, 0.8); }
-                100% { text-shadow: 0 0 5px rgba(255, 69, 0, 1), 0 0 10px rgb(254, 21, 21); }
+             0% {
+                text-shadow: 0 0 5px rgba(255, 69, 0, 0.8), 0 0 5px rgba(245, 45, 45, 0.8);
+             }
+            50% {
+                text-shadow: 0 0 10px rgba(255, 69, 0, 1), 0 0 15px rgb(254, 21, 21);
             }
-            .flaming-text {
+            100% {
+                text-shadow: 0 0 5px rgba(255, 69, 0, 0.8), 0 0 10px rgb(254, 21, 21);
+            }
+}
+            .flaming {
                 background: linear-gradient(45deg, #b15635, #984f42, #8f6b3e, #a99a47);
                 background-size: 20rem 20rem;
                 -webkit-background-clip: text;
@@ -173,24 +186,28 @@
             </style>
 
 </head>
-<body class="bg-cover bg-center h-[100vh] backdrop-blur-[2px]" style="  background-repeat: no-repeat; ">
+<body class="bg-cover bg-center  h-[100vh] backdrop-blur-[2px]" style="  background-repeat: no-repeat; ">
 
 
     <nav class="navbar bg-teal-800 shadow-md w-[100vw] h-[10vh] sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <div class="w-7xl mx-auto relative">
             <div id="navbar" class="relative flex items-center justify-between h-16">
                 <div class=" flex items-center justify-center sm:items-stretch sm:justify-start">
                     <a href="#" class=""><img class="w-10" src="./assets/images/image.png" alt="this is the logo of web is logo of football"></a>
-                    <span><span class="text-red-300 pl-3 pr-3 text-[2rem] font-bold flaming-text">FLAMING</span><span class=" text-[2rem] font-bold  text-white">BALL</span>
+                    <span ><span class="flaming text-red-300 pl-2 pr-2  flaming_text">FLAMING</span><span class=" text-[2rem] font-bold  text-white"><span class="ball">BALL</span></span>
                 </div>
                 <div >
-                    <div class="menu space-x-4 ">
-                        <a href="#" class="text-white px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">Home</a>
-                        <a href="#" id="matches" class="text-white px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">Matches</a>
-                        <a href="#" id="news" class="text-white  px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">News</a>
-                        <button id="btn_ajout" class="text-white px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">add player</button>
-                        <button id="all_players" class="text-white px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">all players</button>
+                    <div class="flex flex-col relative absolute right-3">
+                        <img class="menu w-10 m-auto " src="./assets/images/menu (1).png" alt="">
+                        <div id="menu_elem" class="w-[100vw] text-center justify-center items-center top-[8vh] right-[-10px] absolute space-x-4 text-black flex bg-white z-50 flex-col hidden">
+                        
+                            <a id="menu" href="#" class="menu px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">Home</a>
+                            <a href="#" id="matches" class="menu px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">Matches</a>
+                            <a href="#" id="news" class="menu  px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">News</a>
+                            <button id="btn_ajout" class=" menu px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">add player</button>
+                            <button id="all_players" class="menu px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">all players</button>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -297,7 +314,7 @@
                 </select>
             </div>
             <div class="flex gap-6 w-full justify-center mt-4">
-                <button class="w-40 py-2 px-4 bg-blue-400  text-white rounded-full hover:bg-blue-500 active:bg-white transition">ADD PLAYER</button>
+                <button class="w-40 py-2 px-4 bg-blue-400  text-white rounded-full hover:bg-blue-500  transition">ADD PLAYER</button>
                 <button type="button" id="consol_btn" class="w-40 py-2 px-4 bg-red-600 text-white rounded-full hover:bg-red-700 transition">CANCEL</button>
             </div>
         </form>
@@ -340,23 +357,32 @@
                 </select>
             </div>
             <div class="flex gap-6 w-full justify-center mt-4">
-                <button class="w-4O py-2 px-4 bg-blue-400  text-white rounded-full hover:bg-blue-500 active:bg-white transition">Edit Player</button>
+                <button class="w-4O py-2 px-4 bg-blue-400  text-white rounded-full hover:bg-blue-500  transition">Edit Player</button>
                 <button type="button" id="edit_consol_btn" class="w-40 py-2 px-4 bg-red-400 text-white rounded-full hover:bg-red-500 transition">Cancel</button>
             </div>
         </form>
     
     </div>
-        <footer class="bg-gray-800 h-[10vh] text-white py-8">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <div class="flex flex-wrap justify-between">
+        <footer class="bg-gray-800 h-[10vh] text-white py-1 ">
+            <div class="w-7xl mx-auto">
+                <div class="flex flex-wrap bg-gray-800  justify-between">
                     <div class="w-full sm:w-auto text-center sm:text-left">
-                        <h3 class="text-lg font-semibold">FLAMING BALL</h3>
+                        <h3 class="text-lg font-semibold"><span class="text-red-400">FLAMING</span> BALL</h3>
                         <p class="text-sm text-gray-400 mt-2">&copy; 2024 ISMAIL BAOUD. All rights reserved.</p>
                     </div>
-                    <div class="w-full sm:w-auto mt-6 sm:mt-0 text-center sm:text-right">
+                    <div>
+                    <div>
+                        <div id="contact" class="flex gap-12 mt-7 justify-center items-center">
+                            <p class="mb-2">EMAIL: <a href="ibaoud46@gmail.com" class="text-orange-400 hover:underline">ibaoud46@gmail.com</a></p>
+                            <p class="mb-2">PHONE: <a href="+212628409025" class="text-orange-400 hover:underline">+212628409025</a></p>
+                    
+                        </div>
+                    </div>
+                    </div>
+                    <div class="w-full flex flex-col items-start gap-y-2 sm:w-auto h-full text-center sm:text-right">
                         <a href="#" class="text-gray-300 hover:text-white mx-4">About</a>
                         <a href="#" class="text-gray-300 hover:text-white mx-4">Privacy Policy</a>
-                        <a href="#" class="text-gray-300 hover:text-white mx-4">Contact</a>
+                        <a href="#contact" class="text-gray-300 hover:text-white mx-4">Contact</a>
                     </div>
                 </div>
             </div>

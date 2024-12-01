@@ -493,17 +493,18 @@ const new_club = el("new_club");
 const new_position = el("new_position");
 const new_country = el("new_country");
 const new_div_form = el("div_edit_form");
+////////////////////////////////////////////
+const menu =  document.querySelectorAll(".menu");
+const menu_elem = el("menu_elem")
+menu.forEach(element => {
+  element.addEventListener('click',()=>{
+    menu_elem.classList.toggle('hidden')
+})})
+////////////////////////////////////////////////////
 
-// import {inner} from "../components/afichage.js"
-import {
-  cards_of_players,
-  add_to_terran,
-  add_to_terran_like_GK,
-  cards_of_players_after_filter,
-} from "../components/afichage.js";
+import {cards_of_players,add_to_terran,add_to_terran_like_GK,cards_of_players_after_filter,} from "../components/afichage.js";
 const changement = document.getElementById("changement");
 const id = document.querySelectorAll(".scale");
-// const delet_btn = document.getElementById('delet_btn');
 
 export function setText(id, text) {
   el(id).textContent = text;
@@ -530,8 +531,6 @@ window.delet = (id) => {
 
     add_players_to_changement();
   } else {
-    // id.classList.remove('play')
-    // id.innerHTML = "";
     inner_img = id.parentElement;
     console.log(inner_img);
     
@@ -560,7 +559,7 @@ window.edit = (id) => {
     new_club.value = player.club;
   } else {
     new_Name.value = player.name;
-    new_url.value = player.url;
+    new_url.value = player.photo;
     new_pac.value = player.pace;
     new_pas.value = player.pas;
     new_phy.value = player.phy;
@@ -569,7 +568,7 @@ window.edit = (id) => {
     new_sho.value = player.sho;
     new_logo.value = player.logo;
     new_position.value = player.position;
-    new_country.value = player.country;
+    new_country.value = player.nationality;
     new_flag.value = player.flag;
     new_club.value = player.club;
   }
@@ -578,6 +577,12 @@ window.edit = (id) => {
     "submit",
     (e) => {
       e.preventDefault();
+      const name_regex = /^[A-Za-z\s]+$/; 
+      const url_regex = /^(https?:\/\/)?([\w\d-]+\.)+[\w\d]{2,}(\/[\w\d-_.?&%=]*)*$/;
+      const stat_regex = /^\d+$/;
+      
+      regex(name_regex,url_regex,stat_regex,new_Name.value,new_url.value,new_logo.value,new_pac.value,new_pas.value,new_phy.value,new_sho.value,new_drib.value,new_def.value)
+
 
       player.name = new_Name.value;
       player.photo = new_url.value;
@@ -592,6 +597,7 @@ window.edit = (id) => {
       player.country = new_country.value;
       player.flag = new_flag.value;
       player.club = new_club.value;
+
 
       add_players_to_changement();
       new_div_form.classList.toggle("hidden");
@@ -632,9 +638,8 @@ function filter_players(arr) {
   window.add = (id) => {
     let player = arr[id - 1];
 
-    // let id_data;
      plays = Array.from(document.querySelectorAll(".play"));
-    //  console.log(plays);
+
      if (plays.length > 0) {
       
      
@@ -656,11 +661,6 @@ function filter_players(arr) {
         add_class = document.querySelector(`[data-id="${_id}"]`)
         add_class.firstChild.classList.add('play')
         console.log(plays);
-        
-        // console.log();
-      // add_class.firstChild.classList.('play')
-
-        // plays = document.querySelectorAll(".play");
       } else {
         add_to_terran_like_GK(data_target, player);
         
@@ -675,14 +675,10 @@ function filter_players(arr) {
       add_class.firstChild.classList.add('play')
       console.log();
       console.log(plays);
-
-    //  plays = document.querySelectorAll(".play");
     } else {
       add_to_terran_like_GK(data_target, player);
     }
   }
-    // const elem = document.getElementById(`div_change${player.name}`);
-    // elem.remove();
   };
   const POSITION = arr.filter((el) => el.position === pos);
 
@@ -690,6 +686,46 @@ function filter_players(arr) {
   POSITION.forEach((element) => {
     changement.innerHTML += cards_of_players_after_filter(element);
   });
+}
+
+
+function regex(name_regex,url_regex,stat_regex,name,url,logo,pac,pas,phy,sho,drib,def){
+  if (!name_regex.test(name)) {
+    alert("Player name should contain only letters and spaces.");
+    return;
+  }
+  if (!url_regex.test(url)) {
+    alert("Please enter a valid URL for the player photo.");
+    return;
+  }
+  if (!url_regex.test(logo)) {
+    alert("Please enter a valid URL for the player logo.");
+    return;
+  }
+  if (!stat_regex.test(pac) || pac < 1 || pac > 100) {
+    alert("Pace must be a number between 1 and 100.");
+    return;
+  }
+  if (!stat_regex.test(pas) || pas < 1 || pas > 100) {
+    alert("Passing must be a number between 1 and 100.");
+    return;
+  }
+  if (!stat_regex.test(phy) || phy < 1 || phy > 100) {
+    alert("Physical must be a number between 1 and 100.");
+    return;
+  }
+  if (!stat_regex.test(sho) || sho < 1 || sho > 100) {
+    alert("Shooting must be a number between 1 and 100.");
+    return;
+  }
+  if (!stat_regex.test(drib) || drib < 1 || drib > 100) {
+    alert("Dribbling must be a number between 1 and 100.");
+    return;
+  }
+  if (!stat_regex.test(def) || def < 1 || def > 100) {
+    alert("Defending must be a number between 1 and 100.");
+    return;
+  }
 }
 submit_data(all_players);
 
@@ -715,49 +751,9 @@ function submit_data(array) {
     const name_regex = /^[A-Za-z\s]+$/; 
     const url_regex = /^(https?:\/\/)?([\w\d-]+\.)+[\w\d]{2,}(\/[\w\d-_.?&%=]*)*$/;
     const stat_regex = /^\d+$/;
-    const rating_regex = /^(?:[1-9]?[0-9]|100)$/;
-    if (!name_regex.test(player_name)) {
-      alert("Player name should contain only letters and spaces.");
-      return;
-    }
-    if (!url_regex.test(player_url)) {
-      alert("Please enter a valid URL for the player photo.");
-      return;
-    }
-    if (!url_regex.test(player_logo)) {
-      alert("Please enter a valid URL for the player logo.");
-      return;
-    }
-    if (!stat_regex.test(player_pac) || player_pac < 1 || player_pac > 100) {
-      alert("Pace must be a number between 1 and 100.");
-      return;
-    }
-    if (!stat_regex.test(player_pas) || player_pas < 1 || player_pas > 100) {
-      alert("Passing must be a number between 1 and 100.");
-      return;
-    }
-    if (!stat_regex.test(player_phy) || player_phy < 1 || player_phy > 100) {
-      alert("Physical must be a number between 1 and 100.");
-      return;
-    }
-    if (!stat_regex.test(player_sho) || player_sho < 1 || player_sho > 100) {
-      alert("Shooting must be a number between 1 and 100.");
-      return;
-    }
-    if (!rating_regex.test(player_rat) || player_rat < 1 || player_rat > 100) {
-      alert("Rating must be a number between 1 and 100.");
-      return;
-    }
-    if (!stat_regex.test(player_drib) || player_drib < 1 || player_drib > 100) {
-      alert("Dribbling must be a number between 1 and 100.");
-      return;
-    }
-    if (!stat_regex.test(player_def) || player_def < 1 || player_def > 100) {
-      alert("Defending must be a number between 1 and 100.");
-      return;
-    }
+    
 
-
+    regex(name_regex,url_regex,stat_regex,player_name,player_url,player_logo,player_pac,player_pas,player_phy,player_sho,player_drib,player_def)
     const obg = {
       id: count,
       name: player_name,
@@ -774,13 +770,6 @@ function submit_data(array) {
       defending: player_def,
       physical: player_phy,
     };
-    
-    // if(changement.children.length === 0 ){
-    //   array = '';
-    //   array = [];
-
-    // // }
-
     count++;
     array.push(obg);
 

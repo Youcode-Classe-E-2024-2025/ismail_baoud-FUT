@@ -105,15 +105,15 @@ export function cards_of_players_after_filter(element) {
         <div class="flex flex-row">
           <div id="div_g" class="flex justify-between items-center h-10">
               <span id="img" class="text-sm mr-2 w-20 m-auto font-semibold text-gray-800">${element.name}</span>
-              <div id="f_c" class="flex-row hidden lg:flex">
-                <span class="text-sm mr-2  w-5 pr-1 m-auto text-gray-600"><img src="${element.flag}"></span>
-                <span id="club" class="text-sm mr-2 w-20 m-auto text-gray-600">${element.club}</span>
+              <div id="l_n" class="flex-row items-center hidden lg:flex">
+               <span class="text-sm w-4 text-gray-600"><img src="${element.logo}"></span>
+                <span id="club" class="text-sm ml-3 w-20 m-auto text-gray-600">${element.club}</span>
               </div >
-              <div id="l_n" class="flex flex-row w-20">
-                    <span class="text-sm w-4 text-gray-600"><img src="${element.logo}"></span>
+              <div id="f_c" class="flex flex-row w-20">
+                     <span class="text-sm mr-2 w-5 pr-1 m-auto text-gray-600"><img src="${element.flag}"></span>
                     <span class="text-sm mr-2 w-10 m-auto text-gray-600">${element.nationality}</span>
               </div>
-              <span id="posi" class="text-sm px-1 m-auto ml-6  border-black border-2 text-gray-600">${element.position}</span>
+              <span id="posi"class="text-sm px-1 m-auto ml-6 border-black border-2 text-gray-600">${element.position}</span>
           </div>
         <div class="w-9">
             <button type="button" id="delet_btn" class=" bg-red-300 absolute top-0 hover:scale-150 right-1  pl-2 pr-2 rounded-xl text-center text-xs text-white" onclick="delet(${element.id})">delet</button>
