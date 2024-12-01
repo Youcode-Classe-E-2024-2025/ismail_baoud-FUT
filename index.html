@@ -6,7 +6,7 @@
     <title>FUT team</title>
     <link rel="stylesheet" href="./assets/css/output.css">
     <style>
-            .scale:hover{
+            .plus:hover{
                 scale: 1.1;
             }
             label{
@@ -21,17 +21,22 @@
                 
             
             }
-            input:focus{
-                background: #ade0b7;
+            @media (min-width: 1250px){
+                
+                .posi{
+                margin-left:3rem
+               }
             }
-            
             @media (max-width: 1250px){
-                #f_c{   
+                .f_c{   
                     display: none;
                 }
                 .ball{
                     font-size: 2rem;
                 }
+                .posi{
+                margin-left:4rem
+               }
             }
             @media (max-width: 1000px){
                 .on{
@@ -48,10 +53,10 @@
                     background: #f9f9f9;
                 }
                 
-                .scale{
+                .plus{
                     width: 3rem;
                 }
-                #f_c{
+                .f_c{
                     display: flex;
                 }
                 #changement{
@@ -66,13 +71,12 @@
                     justify-content: center;
                     align-items: center;
                 }
-                #matches,#news{
-                    display: none;
-                }
                 .ball{
                     font-size: 2rem;
                 }
-
+                .posi{
+                margin-left:7rem
+               }
 
             }
             @media (max-width: 640px){
@@ -94,7 +98,7 @@
                     justify-content: center;
                     align-items: center;
                 }
-                .scale{
+                .scale,.hi{
                     width: 2rem;
                 }
                 .ball{
@@ -102,8 +106,18 @@
                     font-weight:300;
                     letter-spacing: 1px;
                 }
+                .posi{
+                margin-left: 10%;
+               }
             }
-            @media (max-width: 320px){
+            @media (max-width: 330px){
+                /* #delet_btn{
+                    background:none ;
+                    background-image: url(assets/images/supprimer.png); */
+                    
+                    /* width: 10px; */
+                /* } */
+                
                 /* #div_g1{
                     width: 100vw;
                     display: flex;
@@ -113,12 +127,21 @@
                     height: 2rem;
                     margin-bottom: 5px;
                 } */
-               #l_n{
+               .l_n{
                 display: none;
 
                }
                .flaming{
                 font-size: 1rem;
+               }
+               .posi{
+                margin-left: 5px;
+                margin-right: 5px;
+               }
+               #terran{
+                padding-left: 2rem;
+                padding-right: 2rem;
+                gap: 5px;
                }
 
             }
@@ -136,8 +159,8 @@
             }
             .plus:hover{
                 cursor: pointer;
-                border-radius: 100%;
-                box-shadow: 0 0 10px 0 rgb(203, 181, 181);
+                /* border-radius: 100%; */
+                /* box-shadow: 0 0 10px 0 rgb(203, 181, 181); */
             }
             .play{
                 transition: transform 0.3s ease-in-out;
@@ -180,7 +203,7 @@
             100% { opacity: 1; }
             }
             .fade-in {
-                animation: fadeIn 1s ease-in-out;
+                animation: fadeIn 0.5s ease-in-out;
             }
 
             </style>
@@ -197,78 +220,80 @@
                     <span ><span class="flaming text-red-300 pl-2 pr-2  flaming_text">FLAMING</span><span class=" text-[2rem] font-bold  text-white"><span class="ball">BALL</span></span>
                 </div>
                 <div >
+                    
                     <div class="flex flex-col relative absolute right-3">
                         <img class="menu w-10 m-auto " src="./assets/images/menu (1).png" alt="">
                         <div id="menu_elem" class="w-[100vw] text-center justify-center items-center top-[8vh] right-[-10px] absolute space-x-4 text-black flex bg-white z-50 flex-col hidden">
                         
                             <a id="menu" href="#" class="menu px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">Home</a>
-                            <a href="#" id="matches" class="menu px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">Matches</a>
-                            <a href="#" id="news" class="menu  px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">News</a>
-                            <button id="btn_ajout" class=" menu px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">add player</button>
-                            <button id="all_players" class="menu px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">all players</button>
-                    </div>
+                            <a href="#" id="#" class="menu px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">Matches</a>
+                            <a href="#" id="#" class="menu  px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">News</a>
+                            <a id="btn_ajout"  class="menu  px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">add Player</a>
+                            <a id="all_players" class="menu  px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">All Players</a>
+                        </div>
+
                 </div>
                 </div>
             </div>
         </div>
     </nav>
     <section class="on relative w-[99.90vw] h-[100vh] flex ">
-        <div id="terran" class="grid h-[80vh] w-[60vw] bg-cover bg-center sm:h-[100vh] md:h-[100%] lg:h-[100%] sm:static justify-center items-center sm:bottom-0 aspect-[191/245] grid-rows-4 grid-cols-5" style=" background-image: url(/assets/images/stadium_background.png); background-repeat: no-repeat;"> 
-            <div id="GK" data-id="GK" class="scale w-20 h-20 m-auto  col-start-3 row-start-4 bg-cover">
-                <img class="plus w-12 m-aut" src="./assets/images/plus1.png" alt="">
+        <div id="terran" class="grid h-[80vh] w-[60vw]  bg-cover bg-center sm:h-[100vh] md:h-[100%] lg:h-[100%] sm:static justify-center items-center sm:bottom-0 aspect-[191/245] grid-rows-4 grid-cols-5" style=" background-image: url(/assets/images/stadium_background.png); background-repeat: no-repeat;"> 
+            <div id="GK" data-id="GK" class="scale w-20 h-20 m-auto  flex items-center justify-center col-start-3 row-start-4 bg-cover">
+                <img class="plus w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
 
             </div>
             <div id="LB" data-id="LB" class="scale w-20  h-20 m-auto  col-start-1 row-start-3 bg-cover">
-                <img class="plus w-12 m-auto drop-shadow" src="./assets/images/plus1.png" alt="">
+                <img class="plus w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
 
                 
             </div>
             <div id="CB" data-id="CB1" class="scale w-20 h-20 m-auto  col-start-2 row-start-3 bg-cover">
-                <img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">
+                <img class="plus w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
 
 
             </div>
             <div id="CB" data-id="CB2" class="scale w-20 h-20 m-auto  col-start-4 row-start-3 bg-cover">
-                <img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">
+                <img class="plus w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
 
 
             </div>
             <div id="RB" data-id="RB" class="scale w-20 h-20 m-auto  col-start-5 row-start-3 bg-cover">
-                <img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">
+                <img class="plus w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
 
 
             </div>
             <div id="CM" data-id="CM1" class="scale w-20 h-20 m-auto  col-start-1 row-start-2 bg-cover">
-                <img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">
+                <img class="plus w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
 
 
             </div>
             <div id="CM" data-id="CM2" class="scale w-20 h-20 m-auto  col-start-3 row-start-2 bg-cover">
-                <img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">
+                <img class="plus w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
 
 
             </div>
             <div id="CM" data-id="CM3" class="scale w-20 h-20 m-auto  col-start-5 row-start-2 bg-cover">
-                <img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">
+                <img class="plus w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
 
 
             </div>
             <div id="LW" data-id="LW" class="scale w-20 h-20 m-auto  col-start-2 row-start-1 bg-cover">
-                <img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">
+                <img class="plus w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
             </div>
             <div id="ST" data-id="ST" class="scale w-20 h-20 m-auto  col-start-3 row-start-1 bg-cover">
-                <img class="plus w-12 m-auto block" src="./assets/images/plus1.png" alt="">
+                <img class="plus w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
 
             </div>
             <div id="RW" data-id="RW" class="scale w-20 h-20 m-auto bg-cover  col-start-4 row-start-1" >
-                <img class="plus w-12 m-auto" src="assets/images/plus1.png" alt="">
+                <img class="plus w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
 
             </div>
         </div>
 
-        <div id="change" class="   w-[40vw] h-[98vh] overflow-y-scroll  flex flex-col ">
+        <div id="change" class="   w-[40vw] h-[100vh] overflow-y-scroll bg-black  flex flex-col bg-center ">
             
-            <div class="flex justify-center  items-center">
+            <div class="flex justify-center  items-center ">
                 <div id="changement" class=" pt-4   w-[100%]" >
                 
                 </div>
@@ -372,14 +397,14 @@
                     </div>
                     <div>
                     <div>
-                        <div id="contact" class="flex gap-12 mt-7 justify-center items-center">
+                        <div id="contact" class="flex gap-12 mt-7  justify-center items-center">
                             <p class="mb-2">EMAIL: <a href="ibaoud46@gmail.com" class="text-orange-400 hover:underline">ibaoud46@gmail.com</a></p>
                             <p class="mb-2">PHONE: <a href="+212628409025" class="text-orange-400 hover:underline">+212628409025</a></p>
                     
                         </div>
                     </div>
                     </div>
-                    <div class="w-full flex flex-col items-start gap-y-2 sm:w-auto h-full text-center sm:text-right">
+                    <div class="fouter_components w-full items-center flex my-auto pt-3 sm:items-start gap-y-2 sm:w-auto h-full text-center sm:text-right">
                         <a href="#" class="text-gray-300 hover:text-white mx-4">About</a>
                         <a href="#" class="text-gray-300 hover:text-white mx-4">Privacy Policy</a>
                         <a href="#contact" class="text-gray-300 hover:text-white mx-4">Contact</a>

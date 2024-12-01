@@ -452,11 +452,6 @@ export function el(id) {
 // export function up_local(arr){
 //   localStorage.setItem("Players",JSON.stringify(arr))
 // }
-const hi = document.querySelectorAll('.hid')
-hi.forEach(element => {
-  console.log(element);
-  
-});
   
 
 const form = document.querySelector("form");
@@ -535,7 +530,7 @@ window.delet = (id) => {
     console.log(inner_img);
     
     id.remove();
-    inner_img.innerHTML = `<img class="plus w-12 m-auto" src="./assets/images/plus1.png" alt="">`;
+    inner_img.innerHTML = `<img class="plus w-12 m-aut" src="./assets/images/plus1.png" alt="">`;
   }
 };
 
