@@ -10,19 +10,27 @@ export function setText(id, text) {
 }
 //////////////////// GET ELEMENT OF ADD FORM //////////////////////////////////
 const form = document.querySelector("form");
-const Name = el("name");
-const url = el("url");
-const pac = el("pac");
-const pas = el("pas");
-const phy = el("phy");
-const drib = el("drib");
-const def = el("def");
-const consol_btn = el("consol_btn");
-const sho = el("sho");
-const logo = el("logo");
-const position = el("position");
-const country = el("country");
-const div_form = el("form");
+let Name = el("name");
+let url = el("url");
+let pac = el("pac");
+let pas = el("pas");
+let phy = el("phy");
+let drib = el("drib");
+let def = el("def");
+let flag = el("flag")
+let club = el("club");
+let consol_btn = el("consol_btn");
+let sho = el("sho");
+let logo = el("logo");
+let position = el("position");
+let country = el("country");
+let div_form = el("form");
+let gk_sho = el("gk_sho");
+let gk_pac = el("gk_pac");
+let gk_pas = el("gk_pas");
+let gk_phy = el("gk_phy");
+let gk_drib = el("gk_drib");
+let gk_def = el("gk_def");
 
 /////////////////////// GET ELEMENT OF EDIT FORM /////////////////////////////////////
 
@@ -44,25 +52,26 @@ const edit_consol_btn = el("edit_consol_btn");
 
 /////////////////////////////////// regex element /////////////////////////////
 
-const name_regex = /^[A-Za-z\s]+$/; 
-const url_regex =  /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/;;
-const stat_regex = /^\d+$/;
+const name_regex = /^[A-Z a-z]*$/; 
+const url_regex =  /^https?:\/\/[^\s$.?#].[^\s]*$/;
+const stat_regex = /^[0-9][0-9]?$/;
 
 /////////////////////// GET ELEMENT OF CHANGEMENT /////////////////////////////////////
 
-window.remove_mouseover = () =>{
- el('btn_suprime').classList.remove('hidden')
- 
-
-  console.log('hi');
+// window.remove_mouseover = () =>{
+//   console.log(this);
   
-}
-window.remove_mouseleave = () =>{
-  el('btn_suprime').classList.toggle('hidden')
-
-  console.log('hello');
-  
-}
+//  el('btn_suprime').classList.remove('hidden')
+// }
+// window.remove_mouseleave = () =>{
+//   el('btn_suprime').classList.add('hidden')
+// }
+// window.remove_mouseover_gk = () =>{
+//   el('btn_suprime_gk').classList.remove('hidden')
+//  }
+//  window.remove_mouseleave_gk = () =>{
+//    el('btn_suprime_gk').classList.add('hidden')
+//  }
 
 
 
@@ -112,34 +121,31 @@ window.delet = (id) => {
 
 window.edit = (id) => {
   edit_div_form.classList.remove("hidden");
-
   const player = all_players[id - 1];
+
+  new_Name.value = player.name;
+  new_url.value = player.photo;
+  new_logo.value = player.logo;
+  new_country.value = player.nationality;
+  new_flag.value = player.flag;
+  new_club.value = player.club;
   if (player.position !== "GK") {
-    new_Name.value = player.name;
-    new_url.value = player.photo;
     new_pac.value = player.pace;
     new_pas.value = player.passing;
     new_phy.value = player.physical;
     new_drib.value = player.dribbling;
     new_def.value = player.defending;
     new_sho.value = player.shooting;
-    new_logo.value = player.logo;
-    new_country.value = player.nationality;
-    new_flag.value = player.flag;
-    new_club.value = player.club;
+    
   } else {
-    new_Name.value = player.name;
-    new_url.value = player.photo;
-    new_pac.value = player.pace;
-    new_pas.value = player.pas;
-    new_phy.value = player.phy;
-    new_drib.value = player.drib;
-    new_def.value = player.def;
-    new_sho.value = player.sho;
-    new_logo.value = player.logo;
-    new_country.value = player.nationality;
-    new_flag.value = player.flag;
-    new_club.value = player.club;
+   
+    new_pac.value = player.diving;
+    new_pas.value = player.handling;
+    new_phy.value = player.kicking;
+    new_drib.value = player.reflexes;
+    new_def.value = player.speed;
+    new_sho.value = player.positioning;
+    
   }
 
   edit_form.addEventListener(
@@ -149,21 +155,28 @@ window.edit = (id) => {
       
       regex(name_regex,url_regex,stat_regex,new_Name.value,new_url.value,new_logo.value,new_pac.value,new_pas.value,new_phy.value,new_sho.value,new_drib.value,new_def.value)
 
-
       player.name = new_Name.value;
       player.photo = new_url.value;
+      player.logo = new_logo.value;
+      player.country = new_country.value;
+      player.flag = new_flag.value;
+      player.club = new_club.value;
+      
+      if (player.position !== "GK") {
       player.pace = new_pac.value;
       player.passing = new_pas.value;
       player.physical = new_phy.value;
       player.passing = new_drib.value;
       player.defending = new_def.value;
       player.shooting = new_sho.value;
-      player.logo = new_logo.value;
-      player.country = new_country.value;
-      player.flag = new_flag.value;
-      player.club = new_club.value;
-
-
+      }else{
+      player.diving = new_pac.value;
+      player.handling = new_pas.value;
+      player.kicking = new_phy.value;
+      player.reflexes = new_drib.value;
+      player.speed = new_def.value;
+      player.positioning = new_sho.value;
+      }
       add_players_to_changement();
       edit_div_form.classList.add("hidden");
     }
@@ -278,39 +291,39 @@ function add_players_to_changement() {
 
 function regex(name_regex,url_regex,stat_regex,name,url,logo,pac,pas,phy,sho,drib,def){
   if (!name_regex.test(name)) {
-    alert("player name should contain only letters and spaces.");
+    alert("player name should contain only letters and spaces ❗");
     return false;
   }
   if (!url_regex.test(url)) {
-    alert("please enter a valid URL for the player photo.");
+    alert("please enter a valid URL for the player photo ❗");
     return false;
   }
   if (!url_regex.test(logo)) {
-    alert("please enter a valid URL for the player logo.");
+    alert("please enter a valid URL for the player logo ❗");
     return;
   }
   if (!stat_regex.test(pac) || pac < 1 || pac > 100) {
-    alert("pace must be a number between 1 and 100.");
+    alert("pace must be a number between 1 and 100 ❗");
     return false ;
   }
   if (!stat_regex.test(pas) || pas < 1 || pas > 100) {
-    alert("passing must be a number between 1 and 100.");
+    alert("passing must be a number between 1 and 100 ❗");
     return false;
   }
   if (!stat_regex.test(phy) || phy < 1 || phy > 100) {
-    alert("physical must be a number between 1 and 100.");
+    alert("physical must be a number between 1 and 100 ❗");
     return false;
   }
   if (!stat_regex.test(sho) || sho < 1 || sho > 100) {
-    alert("phooting must be a number between 1 and 100.");
+    alert("phooting must be a number between 1 and 100 ❗");
     return false;
   }
   if (!stat_regex.test(drib) || drib < 1 || drib > 100) {
-    alert("pribbling must be a number between 1 and 100.");
+    alert("pribbling must be a number between 1 and 100 ❗");
     return false;
   }
   if (!stat_regex.test(def) || def < 1 || def > 100) {
-    alert("defending must be a number between 1 and 100.");
+    alert("defending must be a number between 1 and 100 ❗");
     return false;
   }
   return true
@@ -324,25 +337,46 @@ function submit_data(array) {
   let count = 27;
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const player_name = Name.value;
-    const player_url = url.value;
-    const player_logo = logo.value;
-    const player_pac = pac.value;
-    const player_pas = pas.value;
-    const player_phy = phy.value;
-    const player_sho = sho.value;
-    const player_position = position.value;
-    const player_country = country.value;
-    const player_flag = flag.value;
-    const player_club = club.value;
-    const player_drib = drib.value;
-    const player_def = def.value;
+    let player_name = Name.value;
+    let player_url = url.value;
+    let player_logo = logo.value;
+    
+    let player_position = position.value;
+    let player_country = country.value;
+    let player_flag = flag.value;
+    let player_club = club.value;
+    let player_def ;
+    let player_pac ;
+    let player_pas ;
+    let player_phy ;
+    let player_sho ;
+    let player_drib ;
 
+    if (position.value === "GK") {
+    player_def = gk_def.value;
+    player_pac = gk_pac.value;
+    player_pas = gk_pas.value;
+    player_phy = gk_phy.value;
+    player_sho = gk_sho.value;
+    player_drib = gk_drib.value;
+       
+    }
+    else{
+    player_def = def.value;
+    player_pac = pac.value;
+    player_pas = pas.value;
+    player_phy = phy.value;
+    player_sho = sho.value;
+    player_drib = drib.value;
+      
+    }
     const validation_form = regex(name_regex,url_regex,stat_regex,player_name,player_url,player_logo,player_pac,player_pas,player_phy,player_sho,player_drib,player_def)
    if(!validation_form){
-    return;
+    return
    }
-    const obg = {
+   let obg;
+   if(position.value !== "GK"){
+    obg = {
       id: count,
       name: player_name,
       photo: player_url,
@@ -357,11 +391,54 @@ function submit_data(array) {
       dribbling: player_drib,
       defending: player_def,
       physical: player_phy,
-    };
+    };}
+    else{
+      obg = {
+        id: count,
+        name: player_name,
+        photo: player_url,
+        position: player_position,
+        nationality: player_country,
+        flag: player_flag,
+        club: player_club,
+        logo: player_logo,
+        diving: player_pac,
+        handling: player_sho,
+        kicking: player_pas,
+        reflexes: player_drib,
+        speed: player_def,
+        positioning: player_phy,
+      };
+    }
+    console.log(obg);
+    
     count++;
     array.push(obg);
 
+
+
     add_players_to_changement();
+
+    Name.value = "";
+    url.value = "";
+    pac.value = "";
+    pas.value = "";
+    phy.value = "";
+    drib.value = "";
+    def.value = "";
+    flag.value = "";
+    club.value = "";
+    sho.value = "";
+    logo.value = "";
+    position.value = "";
+    country.value = "";
+    
+    gk_sho.value = "";
+    gk_pac.value = "";
+    gk_pas.value = "";
+    gk_phy.value = "";
+    gk_drib.value = "";
+    gk_def.value = "";
     div_form.classList.toggle("hidden");
   });
 }
