@@ -46,11 +46,29 @@ const edit_consol_btn = el("edit_consol_btn");
 /////////////////////////////////// regex element /////////////////////////////
 
 const name_regex = /^[A-Za-z\s]+$/; 
-const url_regex = /^(https?:\/\/)?([\w\d-]+\.)+[\w\d]{2,}(\/[\w\d-_.?&%=]*)*$/;
+const url_regex =  /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/;;
 const stat_regex = /^\d+$/;
 
 /////////////////////// GET ELEMENT OF CHANGEMENT /////////////////////////////////////
 
+window.remove_mouseover = () =>{
+ el('btn_suprime').classList.remove('hidden')
+ 
+
+  console.log('hi');
+  
+}
+window.remove_mouseleave = () =>{
+  el('btn_suprime').classList.toggle('hidden')
+
+  console.log('hello');
+  
+}
+
+
+
+
+/////////////////////////////////////////////////////////////////////
 const changement = document.getElementById("changement");
 const id = document.querySelectorAll(".scale");
 //////////////////////// BURGER MENU //////////////////////////////
@@ -150,7 +168,7 @@ window.edit = (id) => {
 
 
       add_players_to_changement();
-      edit_div_form.classList.toggle("hidden");
+      _div_form.classList.toggle("hidden");
     }
     ,{ once: true }
   );
