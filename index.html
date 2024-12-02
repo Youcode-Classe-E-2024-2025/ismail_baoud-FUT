@@ -263,20 +263,22 @@
                 <div>
 
                     <div class="flex flex-col relative absolute right-3">
-                        <img class="menu w-10 m-auto " src="./assets/images/menu (1).png" alt="">
+                        <img class="menu w-10 mb-3 m-auto " src="./assets/images/menu (1).png" alt="">
                         <div id="menu_elem"
                             class="w-[100vw] text-center justify-center items-center top-[8vh] right-[-10px] absolute space-x-4 text-black flex bg-white z-50 flex-col hidden">
 
+                           <div class="flex flex-col items-start">
                             <a id="menu" href="#"
-                                class="menu px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">Home</a>
-                            <a href="#" id="#"
-                                class="menu px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">Matches</a>
-                            <a href="#" id="#"
-                                class="menu  px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">News</a>
-                            <a id="btn_ajout"
-                                class="menu  px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">add Player</a>
-                            <a id="all_players"
-                                class="menu  px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">All Players</a>
+                            class="menu px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">Home</a>
+                        <a href="#" id="#"
+                            class="menu px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">Matches</a>
+                        <a href="#" id="#"
+                            class="menu  px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">News</a>
+                        <a id="btn_ajout"
+                            class="menu  px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">add Player</a>
+                        <a id="all_players"
+                            class="menu  px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">All Players</a>
+                           </div>
                         </div>
 
                     </div>
@@ -370,66 +372,62 @@
 
 
    <!-- ///////////////////////////////// ADD FORM ////////////////////////////////////////////  --> 
-    <!-- <div  class="add w-full h-[110vh] hidden   absolute left-0 top-0 justify-center  flex backdrop-blur items-center font-serif"></div>>
-        <button class="bg-black text-white">gool keaper</button>
-        <button>normal player </button>
-    </div> -->
    
    <div id="form"
-        class="add w-full h-[110vh] hidden  absolute left-0 top-0 justify-center  flex backdrop-blur items-center font-serif">
+        class="add w-full h-[110vh] hidden absolute left-0 top-0 justify-center  flex backdrop-blur items-center font-serif">
         <form 
-            class="fade-in flex flex-col items-center justify-center bg-[#4CAF50] text-white  h-[70%] w-[60%] p-6 rounded-3xl shadow-lg ">
+            class="fade-in flex flex-col items-center justify-center bg-[#000] text-white  h-[70%] w-auto p-6 rounded-md shadow-lg ">
 
             <h2 class="text-2xl font-bold text-center text-white mb-4">ADD NEW PlAYER</h2>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+            <div class="grid grid-cols-2 sm:grid-cols-1 gap-4 w-full">
                 <div>
                     <input id="name" placeholder="PlAYER NAME" type="text"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="url" placeholder="PHOTO URL" type="text"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="logo" placeholder="LOGO URL" type="text"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="country" placeholder="COUNTRY" type="text"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-ms text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="flag" placeholder="FLAG URL" type="text"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="club" placeholder="CLUB" type="text"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                 </div>
-                <div id="player" class="">
+                <div id="player" class="ml-10">
                     <input id="pac" placeholder="PACE" type="number"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="pas" placeholder="PASSING" type="number"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="def" placeholder="DEFENDING" type="number"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="phy" placeholder="PHYSICAL" type="number"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="sho" placeholder="SHOOTING" type="number"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="drib" placeholder="DRIBBLING" type="number"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                 </div>
                 <div id="gk_player" class="hidden">
                     <input id="pac" placeholder="DIVING" type="number"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="pas" placeholder="HAMDLING" type="number"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="def" placeholder="KICKING" type="number"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="phy" placeholder="REFLEXES" type="number"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="sho" placeholder="SPEED" type="number"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="drib" placeholder="POSITIONING" type="number"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                 </div>
             </div>
 
-            <div class="w-full text-center mt-4">
+            <div class="w-full flex mt-4">
                 <select id="position"
-                    class="p-3 w-1/2 sm:w-1/3 md:w-1/4 mx-auto rounded-xl text-black bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300">
+                    class="p-3 w-1/2 sm:w-1/3 md:w-1/4 mx-auto rounded-sm text-black bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300">
                     <option value="RB">right back (RB)</option>
                     <option value="CB">center back (CB)</option>
                     <option value="LB">left back (LB)</option>
@@ -442,51 +440,51 @@
                 </select>
             </div>
             <div class="flex gap-6 w-full justify-center mt-4">
-                <button class="w-40 py-2 px-4 bg-blue-400  text-white rounded-full hover:bg-blue-500  transition">ADD
+                <button class="w-40 py-2 px-4 bg-blue-400  text-white rounded-sm hover:bg-blue-500  transition">ADD
                     PLAYER</button>
                 <button type="button" id="consol_btn"
-                    class="w-40 py-2 px-4 bg-red-600 text-white rounded-full hover:bg-red-700 transition">CANCEL</button>
+                    class="w-40 py-2 px-4 bg-red-600 text-white rounded-sm hover:bg-red-700 transition">CANCEL</button>
             </div>
         </form>
     </div>
 
    <!-- /////////////////////////////// EDITE FORM /////////////////////////////////////////// --> 
     <div id="div_edit_form"
-        class="add w-full h-[110vh] hidden   absolute left-0 top-0 justify-center  flex backdrop-blur items-center font-serif">
+        class="add w-full h-[110vh]  hidden  absolute left-0 top-0 justify-center  flex backdrop-blur items-center font-serif">
         <form id="edit_form"
-            class="fade-in flex flex-col items-center justify-center bg-[#4CAF50] text-white  h-[70%] w-[60%] p-6 rounded-3xl shadow-lg ">
+            class="fade-in flex flex-col items-center justify-center bg-[#4CAF50] text-white  h-[70%] w-[60%] p-6 rounded-md shadow-lg ">
 
             <h2 class="text-2xl font-bold text-center text-white mb-4">Edit PLAYER INFOS</h2>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+            <div class="grid grid-cols-2 gap-4 w-full">
                 <div>
                     <input id="new_name" placeholder="PlAYER NAME" type="text"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="new_url" placeholder="PHOTO URL" type="text"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="new_logo" placeholder="LOGO URL" type="text"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="new_country" placeholder="COUNTRY" type="text"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="new_flag" placeholder="FLAG URL" type="text"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="new_club" placeholder="CLUB" type="text"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                 </div>
 
                 <div class="">
                     <input id="new_pac" placeholder="PACE" type="number"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="new_pas" placeholder="PASSING" type="number"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="new_def" placeholder="DEFENDING" type="number"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="new_phy" placeholder="PHYSICAL" type="number"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="new_sho" placeholder="SHOOTING" type="number"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                     <input id="new_drib" placeholder="DRIBBLING" type="number"
-                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                        class="p-1 w-full rounded-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                 </div>
             </div>
             <div class="flex gap-6 w-full justify-center mt-4">

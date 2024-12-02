@@ -26,6 +26,7 @@ export function add_to_terran(target, element){
         </div>
     </div>
     <button id="btn_suprime" class="hidden" onclick="delet(${element.nationality})"><img class="w-3 h-3 absolute top-0 left-0" src="./assets/images/supprimer.png" alt=""></button>
+
   </div>`
   let player = el(`${element.id}`);
     player.src = element.photo;
@@ -108,11 +109,13 @@ export function cards_of_players_after_filter(element) {
           <div id="div_g" class="flex justify-between items-center h-10">
             <span id="img" class="text-sm mr-2 w-20 m-auto font-semibold text-gray-800">${element.name}</span>
             <div id="" class="f_c flex-row hidden lg:flex">
-              <span class="text-sm mr-2  w-5 pr-1 m-auto text-gray-600"><img src="${element.flag}"></span>
-              <span id="club" class="text-sm mr-2 w-20 m-auto text-gray-600">${element.club}</span>
+                  <span class="text-sm w-4 text-gray-600"><img src="${element.logo}"></span>
+
+              <span id="club" class="text-sm mr-2 w-24 m-auto text-gray-600">${element.club}</span>
             </div >
             <div id="" class="l_n flex flex-row w-20">
-                  <span class="text-sm w-4 text-gray-600"><img src="${element.logo}"></span>
+              <span class="text-sm mr-2  w-5 pr-1 m-auto text-gray-600"><img src="${element.flag}"></span>
+
                   <span class="text-sm mr-2 w-10 m-auto text-gray-600">${element.nationality}</span>
             </div>
             <span class=" posi text-sm px-1 m-auto  border-black border-2 text-gray-600">${element.position}</span>
