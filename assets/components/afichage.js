@@ -26,8 +26,6 @@ export function add_to_terran(target, element){
         </div>
     </div>
     <button id="btn_suprime" class="hidden" onclick="delet(${element.nationality})"><img class="w-3 h-3 absolute top-0 left-0" src="./assets/images/supprimer.png" alt=""></button>
- 
-
   </div>`
   let player = el(`${element.id}`);
     player.src = element.photo;

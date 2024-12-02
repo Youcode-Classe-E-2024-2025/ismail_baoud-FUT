@@ -38,7 +38,6 @@ const new_sho = el("new_sho");
 const new_logo = el("new_logo");
 const new_flag = el("new_flag");
 const new_club = el("new_club");
-const new_position = el("new_position");
 const new_country = el("new_country");
 const edit_div_form = el("div_edit_form");
 const edit_consol_btn = el("edit_consol_btn");
@@ -125,7 +124,6 @@ window.edit = (id) => {
     new_def.value = player.defending;
     new_sho.value = player.shooting;
     new_logo.value = player.logo;
-    new_position.value = player.position;
     new_country.value = player.nationality;
     new_flag.value = player.flag;
     new_club.value = player.club;
@@ -139,7 +137,6 @@ window.edit = (id) => {
     new_def.value = player.def;
     new_sho.value = player.sho;
     new_logo.value = player.logo;
-    new_position.value = player.position;
     new_country.value = player.nationality;
     new_flag.value = player.flag;
     new_club.value = player.club;
@@ -162,7 +159,6 @@ window.edit = (id) => {
       player.defending = new_def.value;
       player.shooting = new_sho.value;
       player.logo = new_logo.value;
-      player.position = new_position.value;
       player.country = new_country.value;
       player.flag = new_flag.value;
       player.club = new_club.value;
