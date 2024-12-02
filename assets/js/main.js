@@ -1,4 +1,4 @@
-import { all_players } from "../components/afichage.js";
+import { all_players } from "../data/players.js";
 import {cards_of_players,add_to_terran,add_to_terran_like_GK,cards_of_players_after_filter,} from "../components/afichage.js";
 
 export function el(id) {
