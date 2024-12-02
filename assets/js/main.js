@@ -112,7 +112,7 @@ window.delet = (id) => {
 /////////////////////// EDIT FUNCTION  ////////////////////////////////////
 
 window.edit = (id) => {
-  edit_div_form.classList.toggle("hidden");
+  edit_div_form.classList.remove("hidden");
 
   const player = all_players[id - 1];
   if (player.position !== "GK") {
@@ -148,6 +148,7 @@ window.edit = (id) => {
   edit_form.addEventListener(
     "submit",
     (e) => {
+      e.preventDefault()
       
       regex(name_regex,url_regex,stat_regex,new_Name.value,new_url.value,new_logo.value,new_pac.value,new_pas.value,new_phy.value,new_sho.value,new_drib.value,new_def.value)
 
@@ -168,7 +169,7 @@ window.edit = (id) => {
 
 
       add_players_to_changement();
-      _div_form.classList.toggle("hidden");
+      edit_div_form.classList.add("hidden");
     }
     ,{ once: true }
   );
