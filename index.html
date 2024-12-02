@@ -1,334 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FUT team</title>
     <link rel="stylesheet" href="./assets/css/output.css">
-    <style>
-            .plus:hover{
-                scale: 1.1;
-            }
-            label{
-                display: block;
-            }
-            input{
-                display: block;
-                color: black;
-                text-align: center;
-                outline: none;
-                margin: 10px;
-                
-            
-            }
-            @media (min-width: 1250px){
-                
-                .posi{
-                margin-left:3rem
-               }
-            }
-            @media (max-width: 1250px){
-                .f_c{   
-                    display: none;
-                }
-                .ball{
-                    font-size: 2rem;
-                }
-                .posi{
-                margin-left:4rem
-               }
-            }
-            @media (max-width: 1000px){
-                .on{
-                    display: flex;
-                    flex-direction: column;
-                }
-                #terran{
-                    width: 100vw;
-                    height: 60vh;
-                }
-                #change{
-                    width: 100vw;
-                    height: 40vh;
-                    background: #f9f9f9;
-                }
-                
-                .plus{
-                    width: 3rem;
-                }
-                .f_c{
-                    display: flex;
-                }
-                #changement{
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-                #div_g1{
-                    width: 80vw;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-                .ball{
-                    font-size: 2rem;
-                }
-                .posi{
-                margin-left:7rem
-               }
 
+
+
+  <!--/////////////////////////// STYLE CSS /////////////////////////////// -->  
+    <style>
+        .empty_card:hover {
+            scale: 1.1;
+        }
+
+        label {
+            display: block;
+        }
+
+        input {
+            display: block;
+            color: black;
+            text-align: center;
+            outline: none;
+            margin: 10px;
+
+
+        }
+
+        @media (min-width: 1250px) {
+
+            .posi {
+                margin-left: 3rem
             }
-            @media (max-width: 640px){
-               .on{
+        }
+
+        @media (max-width: 1250px) {
+            .f_c {
+                display: none;
+            }
+
+            .ball {
+                font-size: 2rem;
+            }
+
+            .posi {
+                margin-left: 4rem
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .on {
+                display: flex;
+                flex-direction: column;
+            }
+
+            #terran {
+                width: 100vw;
+                height: 60vh;
+            }
+
+            #change {
+                width: 100vw;
+                height: 40vh;
+                background: #f9f9f9;
+            }
+
+            .empty_card {
+                width: 3rem;
+            }
+
+            .f_c {
+                display: flex;
+            }
+
+            #changement {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #div_g1 {
+                width: 80vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .ball {
+                font-size: 2rem;
+            }
+
+            .posi {
+                margin-left: 7rem
+            }
+
+        }
+
+        @media (max-width: 640px) {
+            .on {
                 display: grid;
-                grid-template-rows: repeat(2,1fr);
-               }
-               #terran{
+                grid-template-rows: repeat(2, 1fr);
+            }
+
+            #terran {
                 grid-row: 1;
                 height: 60vh;
-               }
-               #change{
-                grid-row: 2;
-                
-               }
-               #div_g1{
-                    width: 100vw;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-                .scale,.hi{
-                    width: 2rem;
-                }
-                .ball{
-                    font-size: 1rem;
-                    font-weight:300;
-                    letter-spacing: 1px;
-                }
-                .posi{
-                margin-left: 10%;
-               }
             }
-            @media (max-width: 330px){
-                /* #delet_btn{
-                    background:none ;
-                    background-image: url(assets/images/supprimer.png); */
-                    
-                    /* width: 10px; */
-                /* } */
-                
-                /* #div_g1{
-                    width: 100vw;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    height: 2rem;
-                    margin-bottom: 5px;
-                } */
-               .l_n{
+
+            #change {
+                grid-row: 2;
+
+            }
+
+            #div_g1 {
+                width: 100vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .scale,
+            .hi {
+                width: 2rem;
+            }
+
+            .ball {
+                font-size: 1rem;
+                font-weight: 300;
+                letter-spacing: 1px;
+            }
+
+            .posi {
+                margin-left: 10%;
+            }
+        }
+
+        @media (max-width: 330px) {
+            .l_n {
                 display: none;
 
-               }
-               .flaming{
+            }
+
+            .flaming {
                 font-size: 1rem;
-               }
-               .posi{
+            }
+
+            .posi {
                 margin-left: 5px;
                 margin-right: 5px;
-               }
-               #terran{
+            }
+
+            #terran {
                 padding-left: 2rem;
                 padding-right: 2rem;
                 gap: 5px;
-               }
-
             }
-            
 
-            ::-webkit-scrollbar {
+        }
+
+
+        ::-webkit-scrollbar {
             width: 3px;
             height: 3px;
         }
-        
 
-            ::-webkit-scrollbar-thumb {
-            background: rgba(23,23,23,1);
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(23, 23, 23, 1);
             border-radius: 5px;
+        }
+
+        .empty_card:hover {
+            cursor: pointer;
+            /* border-radius: 100%; */
+            /* box-shadow: 0 0 10px 0 rgb(203, 181, 181); */
+        }
+
+        .play {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .play:hover {
+            transform: scale(1.7);
+
+        }
+
+        @keyframes flaming {
+            0% {
+                background-position: 0% 50%;
             }
-            .plus:hover{
-                cursor: pointer;
-                /* border-radius: 100%; */
-                /* box-shadow: 0 0 10px 0 rgb(203, 181, 181); */
+
+            50% {
+                background-position: 100% 50%;
             }
-            .play{
-                transition: transform 0.3s ease-in-out;
+
+            100% {
+                background-position: 0% 50%;
             }
-            .play:hover{
-                transform: scale(1.7);
-                
-            }
-            @keyframes flaming {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-            }
-            @keyframes flicker {
-             0% {
+        }
+
+        @keyframes flicker {
+            0% {
                 text-shadow: 0 0 5px rgba(255, 69, 0, 0.8), 0 0 5px rgba(245, 45, 45, 0.8);
-             }
+            }
+
             50% {
                 text-shadow: 0 0 10px rgba(255, 69, 0, 1), 0 0 15px rgb(254, 21, 21);
             }
+
             100% {
                 text-shadow: 0 0 5px rgba(255, 69, 0, 0.8), 0 0 10px rgb(254, 21, 21);
             }
-}
-            .flaming {
-                background: linear-gradient(45deg, #b15635, #984f42, #8f6b3e, #a99a47);
-                background-size: 20rem 20rem;
-                -webkit-background-clip: text;
-                color: transparent;
-                animation: flaming 0.5s infinite, flicker 0.5s infinite;
-                font-size: 2rem;
-                font-weight:600;
-                letter-spacing: 3px;
+        }
 
-            }
-            
+        .flaming {
+            background: linear-gradient(45deg, #b15635, #984f42, #8f6b3e, #a99a47);
+            background-size: 20rem 20rem;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: flaming 0.5s infinite, flicker 0.5s infinite;
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: 3px;
 
-            @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-            }
-            .fade-in {
-                animation: fadeIn 0.5s ease-in-out;
+        }
+
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
             }
 
-            </style>
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+    </style>
 
 </head>
+
 <body class="bg-cover bg-center  h-[100vh] backdrop-blur-[2px]" style="  background-repeat: no-repeat; ">
 
+
+   <!-- //////////////////////////////////// NAVBAR ///////////////////////////////////////////////--> 
 
     <nav class="navbar bg-teal-800 shadow-md w-[100vw] h-[10vh] sticky top-0 z-50">
         <div class="w-7xl mx-auto relative">
             <div id="navbar" class="relative flex items-center justify-between h-16">
                 <div class=" flex items-center justify-center sm:items-stretch sm:justify-start">
-                    <a href="#" class=""><img class="w-10" src="./assets/images/image.png" alt="this is the logo of web is logo of football"></a>
-                    <span ><span class="flaming text-red-300 pl-2 pr-2  flaming_text">FLAMING</span><span class=" text-[2rem] font-bold  text-white"><span class="ball">BALL</span></span>
+                    <a href="#" class=""><img class="w-10" src="./assets/images/image.png"
+                            alt="this is the logo of web is logo of football"></a>
+                    <span><span class="flaming text-red-300 pl-2 pr-2  flaming_text">FLAMING</span><span
+                            class=" text-[2rem] font-bold  text-white"><span class="ball">BALL</span></span>
                 </div>
-                <div >
-                    
+                <div>
+
                     <div class="flex flex-col relative absolute right-3">
                         <img class="menu w-10 m-auto " src="./assets/images/menu (1).png" alt="">
-                        <div id="menu_elem" class="w-[100vw] text-center justify-center items-center top-[8vh] right-[-10px] absolute space-x-4 text-black flex bg-white z-50 flex-col hidden">
-                        
-                            <a id="menu" href="#" class="menu px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">Home</a>
-                            <a href="#" id="#" class="menu px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">Matches</a>
-                            <a href="#" id="#" class="menu  px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">News</a>
-                            <a id="btn_ajout"  class="menu  px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">add Player</a>
-                            <a id="all_players" class="menu  px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">All Players</a>
+                        <div id="menu_elem"
+                            class="w-[100vw] text-center justify-center items-center top-[8vh] right-[-10px] absolute space-x-4 text-black flex bg-white z-50 flex-col hidden">
+
+                            <a id="menu" href="#"
+                                class="menu px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">Home</a>
+                            <a href="#" id="#"
+                                class="menu px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">Matches</a>
+                            <a href="#" id="#"
+                                class="menu  px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">News</a>
+                            <a id="btn_ajout"
+                                class="menu  px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">add Player</a>
+                            <a id="all_players"
+                                class="menu  px-3 py-2 rounded-md text-lg font-medium hover:bg-gray-700">All Players</a>
                         </div>
 
-                </div>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
-    <section class="on relative w-[99.90vw] h-[100vh] flex ">
-        <div id="terran" class="grid h-[80vh] w-[60vw]  bg-cover bg-center sm:h-[100vh] md:h-[100%] lg:h-[100%] sm:static justify-center items-center sm:bottom-0 aspect-[191/245] grid-rows-4 grid-cols-5" style=" background-image: url(/assets/images/stadium_background.png); background-repeat: no-repeat;"> 
-            <div id="GK" data-id="GK" class="scale w-20 h-20 m-auto  flex items-center justify-center col-start-3 row-start-4 bg-cover">
-                <img class="plus w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
+
+
+   <!-- ////////////////////////////////////// CONATAINER //////////////////////////////////////////// --> 
+
+
+    <section class="on relative w-[99.90vw h-[100vh] flex ">
+
+      <!--  /////////////////////////////////   TERAIN   /////////////////////////////////////////////// --> 
+        <div id="terran"
+            class="grid h-[80vh] w-[60vw]  bg-cover bg-center sm:h-[100vh] md:h-[100%] lg:h-[100%] sm:static justify-center items-center sm:bottom-0 aspect-[191/245] grid-rows-4 grid-cols-5"
+            style=" background-image: url(/assets/images/stadium_background.png); background-repeat: no-repeat;">
+            <div id="GK" data-id="GK"
+                class="scale w-20 h-20 m-auto  flex items-center justify-center col-start-3 row-start-4 bg-cover">
+                <img class="empty_card w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
 
             </div>
             <div id="LB" data-id="LB" class="scale w-20  h-20 m-auto  col-start-1 row-start-3 bg-cover">
-                <img class="plus w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
+                <img class="empty_card w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
 
-                
+
             </div>
             <div id="CB" data-id="CB1" class="scale w-20 h-20 m-auto  col-start-2 row-start-3 bg-cover">
-                <img class="plus w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
+                <img class="empty_card w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
 
 
             </div>
             <div id="CB" data-id="CB2" class="scale w-20 h-20 m-auto  col-start-4 row-start-3 bg-cover">
-                <img class="plus w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
+                <img class="empty_card w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
 
 
             </div>
             <div id="RB" data-id="RB" class="scale w-20 h-20 m-auto  col-start-5 row-start-3 bg-cover">
-                <img class="plus w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
+                <img class="empty_card w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
 
 
             </div>
             <div id="CM" data-id="CM1" class="scale w-20 h-20 m-auto  col-start-1 row-start-2 bg-cover">
-                <img class="plus w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
+                <img class="empty_card w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
 
 
             </div>
             <div id="CM" data-id="CM2" class="scale w-20 h-20 m-auto  col-start-3 row-start-2 bg-cover">
-                <img class="plus w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
+                <img class="empty_card w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
 
 
             </div>
             <div id="CM" data-id="CM3" class="scale w-20 h-20 m-auto  col-start-5 row-start-2 bg-cover">
-                <img class="plus w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
+                <img class="empty_card w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
 
 
             </div>
             <div id="LW" data-id="LW" class="scale w-20 h-20 m-auto  col-start-2 row-start-1 bg-cover">
-                <img class="plus w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
+                <img class="empty_card w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
             </div>
             <div id="ST" data-id="ST" class="scale w-20 h-20 m-auto  col-start-3 row-start-1 bg-cover">
-                <img class="plus w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
+                <img class="empty_card w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
 
             </div>
-            <div id="RW" data-id="RW" class="scale w-20 h-20 m-auto bg-cover  col-start-4 row-start-1" >
-                <img class="plus w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
+            <div id="RW" data-id="RW" class="scale w-20 h-20 m-auto bg-cover  col-start-4 row-start-1">
+                <img class="empty_card w-[90%] m-aut" src="./assets/images/card_player.png" alt="">
 
             </div>
         </div>
+
+
+
+      <!--  ///////////////////////////////////////// CHANGEMENT //////////////////////////////////////// --> 
 
         <div id="change" class="   w-[40vw] h-[100vh] overflow-y-scroll bg-black  flex flex-col bg-center ">
-            
+
             <div class="flex justify-center  items-center ">
-                <div id="changement" class=" pt-4   w-[100%]" >
-                
+                <div id="changement" class=" pt-4 bg-black  w-[100%]">
+
                 </div>
             </div>
         </div>
-       
+
     </section>
-    <div id="form" class="add w-full h-[110vh]  hidden absolute left-0 top-0 justify-center  flex backdrop-blur items-center font-serif">
-        <form id="form" class="fade-in flex flex-col items-center justify-center bg-[#4CAF50] text-white  h-[70%] w-[60%] p-6 rounded-3xl shadow-lg ">
+
+
+
+   <!-- ////////////////////////////////// FORMS ///////////////////////////////////////////////// --> 
+
+
+
+   <!-- ///////////////////////////////// ADD FORM ////////////////////////////////////////////  --> 
+    <!-- <div  class="add w-full h-[110vh] hidden   absolute left-0 top-0 justify-center  flex backdrop-blur items-center font-serif"></div>>
+        <button class="bg-black text-white">gool keaper</button>
+        <button>normal player </button>
+    </div> -->
+   
+   <div id="form"
+        class="add w-full h-[110vh] hidden  absolute left-0 top-0 justify-center  flex backdrop-blur items-center font-serif">
+        <form 
+            class="fade-in flex flex-col items-center justify-center bg-[#4CAF50] text-white  h-[70%] w-[60%] p-6 rounded-3xl shadow-lg ">
 
             <h2 class="text-2xl font-bold text-center text-white mb-4">ADD NEW PlAYER</h2>
-    
+
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
                 <div>
-                    <input id="name" placeholder="PlAYER NAME" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
-                    <input id="url" placeholder="PHOTO URL" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
-                    <input id="logo" placeholder="LOGO URL" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
-                    <input id="country" placeholder="COUNTRY" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
-                    <input id="flag" placeholder="FLAG URL" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
-                    <input id="club" placeholder="CLUB" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="name" placeholder="PlAYER NAME" type="text"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="url" placeholder="PHOTO URL" type="text"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="logo" placeholder="LOGO URL" type="text"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="country" placeholder="COUNTRY" type="text"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="flag" placeholder="FLAG URL" type="text"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="club" placeholder="CLUB" type="text"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                 </div>
-        
-                <div class="">
-                    <input id="pac" placeholder="PACE" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
-                    <input id="pas" placeholder="PASSING" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
-                    <input id="def" placeholder="DEFENDING" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
-                    <input id="phy" placeholder="PHYSICAL" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
-                    <input id="sho" placeholder="SHOOTING" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
-                    <input id="drib" placeholder="DRIBBLING" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                <div id="player" class="">
+                    <input id="pac" placeholder="PACE" type="number"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="pas" placeholder="PASSING" type="number"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="def" placeholder="DEFENDING" type="number"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="phy" placeholder="PHYSICAL" type="number"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="sho" placeholder="SHOOTING" type="number"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="drib" placeholder="DRIBBLING" type="number"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                </div>
+                <div id="gk_player" class="hidden">
+                    <input id="gk_pac" placeholder="DIVING" type="number"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="gk_pas" placeholder="HAMDLING" type="number"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="gk_def" placeholder="KICKING" type="number"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="gk_phy" placeholder="REFLEXES" type="number"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="gk_sho" placeholder="SPEED" type="number"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="gk_drib" placeholder="POSITIONING" type="number"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                 </div>
             </div>
-    
+
             <div class="w-full text-center mt-4">
-                <select id="position" class="p-3 w-1/2 sm:w-1/3 md:w-1/4 mx-auto rounded-xl text-black bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300">
-                    <option value="GK">goalkeeper (GK)</option>
+                <select id="position"
+                    class="p-3 w-1/2 sm:w-1/3 md:w-1/4 mx-auto rounded-xl text-black bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300">
                     <option value="RB">right back (RB)</option>
                     <option value="CB">center back (CB)</option>
                     <option value="LB">left back (LB)</option>
@@ -336,42 +437,62 @@
                     <option value="RW">right wing (RW)</option>
                     <option value="ST">striker (ST)</option>
                     <option value="LW">left wing (LW)</option>
+                    <option value="GK">goalkeeper (GK)</option>
+
                 </select>
             </div>
             <div class="flex gap-6 w-full justify-center mt-4">
-                <button class="w-40 py-2 px-4 bg-blue-400  text-white rounded-full hover:bg-blue-500  transition">ADD PLAYER</button>
-                <button type="button" id="consol_btn" class="w-40 py-2 px-4 bg-red-600 text-white rounded-full hover:bg-red-700 transition">CANCEL</button>
+                <button class="w-40 py-2 px-4 bg-blue-400  text-white rounded-full hover:bg-blue-500  transition">ADD
+                    PLAYER</button>
+                <button type="button" id="consol_btn"
+                    class="w-40 py-2 px-4 bg-red-600 text-white rounded-full hover:bg-red-700 transition">CANCEL</button>
             </div>
         </form>
     </div>
-    <div id="div_edit_form" class="add w-full h-[110vh] hidden   absolute left-0 top-0 justify-center  flex backdrop-blur items-center font-serif">
-        <form id="edit_form" class="fade-in flex flex-col items-center justify-center bg-[#4CAF50] text-white  h-[70%] w-[60%] p-6 rounded-3xl shadow-lg ">
+
+   <!-- /////////////////////////////// EDITE FORM /////////////////////////////////////////// --> 
+    <div id="div_edit_form"
+        class="add w-full h-[110vh] hidden   absolute left-0 top-0 justify-center  flex backdrop-blur items-center font-serif">
+        <form id="edit_form"
+            class="fade-in flex flex-col items-center justify-center bg-[#4CAF50] text-white  h-[70%] w-[60%] p-6 rounded-3xl shadow-lg ">
 
             <h2 class="text-2xl font-bold text-center text-white mb-4">Edit PLAYER INFOS</h2>
-    
+
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
                 <div>
-                    <input id="new_name" placeholder="PlAYER NAME" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
-                    <input id="new_url" placeholder="PHOTO URL" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
-                    <input id="new_logo" placeholder="LOGO URL" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
-                    <input id="new_country" placeholder="COUNTRY" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
-                    <input id="new_flag" placeholder="FLAG URL" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
-                    <input id="new_club" placeholder="CLUB" type="text" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="new_name" placeholder="PlAYER NAME" type="text"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="new_url" placeholder="PHOTO URL" type="text"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="new_logo" placeholder="LOGO URL" type="text"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="new_country" placeholder="COUNTRY" type="text"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="new_flag" placeholder="FLAG URL" type="text"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="new_club" placeholder="CLUB" type="text"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                 </div>
-        
+
                 <div class="">
-                    <input id="new_pac" placeholder="PACE" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
-                    <input id="new_pas" placeholder="PASSING" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
-                    <input id="new_def" placeholder="DEFENDING" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
-                    <input id="new_phy" placeholder="PHYSICAL" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
-                    <input id="new_sho" placeholder="SHOOTING" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
-                    <input id="new_drib" placeholder="DRIBBLING" type="number" class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="new_pac" placeholder="PACE" type="number"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="new_pas" placeholder="PASSING" type="number"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="new_def" placeholder="DEFENDING" type="number"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="new_phy" placeholder="PHYSICAL" type="number"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="new_sho" placeholder="SHOOTING" type="number"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+                    <input id="new_drib" placeholder="DRIBBLING" type="number"
+                        class="p-1 w-full rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300" />
                 </div>
             </div>
-    
+
             <div class="w-full text-center mt-4">
-                <select id="new_position" class="p-3 w-1/2 sm:w-1/3 md:w-1/4 mx-auto rounded-xl text-black bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300">
-                    <option value="GK">goalkeeper (GK)</option>
+                <select id="new_position"
+                    class="p-3 w-1/2 sm:w-1/3 md:w-1/4 mx-auto rounded-xl text-black bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-300">
                     <option value="RB">right back (RB)</option>
                     <option value="CB">center back (CB)</option>
                     <option value="LB">left back (LB)</option>
@@ -379,39 +500,51 @@
                     <option value="RW">right wing (RW)</option>
                     <option value="ST">striker (ST)</option>
                     <option value="LW">left wing (LW)</option>
+                    <option value="GK">goalkeeper (GK)</option>
+
                 </select>
             </div>
             <div class="flex gap-6 w-full justify-center mt-4">
-                <button class="w-4O py-2 px-4 bg-blue-400  text-white rounded-full hover:bg-blue-500  transition">Edit Player</button>
-                <button type="button" id="edit_consol_btn" class="w-40 py-2 px-4 bg-red-400 text-white rounded-full hover:bg-red-500 transition">Cancel</button>
+                <button class="w-4O py-2 px-4 bg-blue-400  text-white rounded-full hover:bg-blue-500  transition">Edit
+                    Player</button>
+                <button type="button" id="edit_consol_btn"
+                    class="w-40 py-2 px-4 bg-red-400 text-white rounded-full hover:bg-red-500 transition">Cancel</button>
             </div>
         </form>
-    
+
     </div>
-        <footer class="bg-gray-800 h-[10vh] text-white py-1 ">
-            <div class="w-7xl mx-auto">
-                <div class="flex flex-wrap bg-gray-800  justify-between">
-                    <div class="w-full sm:w-auto text-center sm:text-left">
-                        <h3 class="text-lg font-semibold"><span class="text-red-400">FLAMING</span> BALL</h3>
-                        <p class="text-sm text-gray-400 mt-2">&copy; 2024 ISMAIL BAOUD. All rights reserved.</p>
-                    </div>
-                    <div>
+
+
+   <!-- ///////////////////////////// FOOTER /////////////////////////////////////////////// --> 
+
+    <footer class="bg-gray-800 h-[10vh] text-white py-1 ">
+        <div class="w-7xl mx-auto">
+            <div class="flex flex-wrap bg-gray-800  justify-between">
+                <div class="w-full sm:w-auto text-center sm:text-left">
+                    <h3 class="text-lg font-semibold"><span class="text-red-400">FLAMING</span> BALL</h3>
+                    <p class="text-sm text-gray-400 mt-2">&copy; 2024 ISMAIL BAOUD. All rights reserved.</p>
+                </div>
+                <div>
                     <div>
                         <div id="contact" class="flex gap-12 mt-7  justify-center items-center">
-                            <p class="mb-2">EMAIL: <a href="ibaoud46@gmail.com" class="text-orange-400 hover:underline">ibaoud46@gmail.com</a></p>
-                            <p class="mb-2">PHONE: <a href="+212628409025" class="text-orange-400 hover:underline">+212628409025</a></p>
-                    
+                            <p class="mb-2">EMAIL: <a href="ibaoud46@gmail.com"
+                                    class="text-orange-400 hover:underline">ibaoud46@gmail.com</a></p>
+                            <p class="mb-2">PHONE: <a href="+212628409025"
+                                    class="text-orange-400 hover:underline">+212628409025</a></p>
+
                         </div>
                     </div>
-                    </div>
-                    <div class="fouter_components w-full items-center flex my-auto pt-3 sm:items-start gap-y-2 sm:w-auto h-full text-center sm:text-right">
-                        <a href="#" class="text-gray-300 hover:text-white mx-4">About</a>
-                        <a href="#" class="text-gray-300 hover:text-white mx-4">Privacy Policy</a>
-                        <a href="#contact" class="text-gray-300 hover:text-white mx-4">Contact</a>
-                    </div>
+                </div>
+                <div
+                    class="fouter_components w-full items-center flex my-auto pt-3 sm:items-start gap-y-2 sm:w-auto h-full text-center sm:text-right">
+                    <a href="#" class="text-gray-300 hover:text-white mx-4">About</a>
+                    <a href="#" class="text-gray-300 hover:text-white mx-4">Privacy Policy</a>
+                    <a href="#contact" class="text-gray-300 hover:text-white mx-4">Contact</a>
                 </div>
             </div>
-        </footer>
-    <script  type="module" src="./assets/js/main.js"></script>
+        </div>
+    </footer>
+    <script type="module" src="./assets/js/main.js"></script>
 </body>
+
 </html>
