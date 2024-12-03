@@ -115,6 +115,47 @@ window.delet = (id) => {
     inner_img.innerHTML = `<img class="empty_card w-[90%] m-aut" src="./assets/images/card_player.png" alt="">`;
   }
 };
+///////////////////////////////////////////////// function of validation of form with regex /////////////////////////////////
+
+function regex(name_regex,url_regex,stat_regex,name,url,logo,pac,pas,phy,sho,drib,def){
+  if (!name_regex.test(name)) {
+    alert("player name should contain only letters and spaces ❗");
+    return false;
+  }
+  if (!url_regex.test(url)) {
+    alert("please enter a valid URL for the player photo ❗");
+    return false;
+  }
+  if (!url_regex.test(logo)) {
+    alert("please enter a valid URL for the player logo ❗");
+    return;
+  }
+  if (!stat_regex.test(pac) || pac < 1 || pac > 100) {
+    alert("pace must be a number between 1 and 100 ❗");
+    return false ;
+  }
+  if (!stat_regex.test(pas) || pas < 1 || pas > 100) {
+    alert("passing must be a number between 1 and 100 ❗");
+    return false;
+  }
+  if (!stat_regex.test(phy) || phy < 1 || phy > 100) {
+    alert("physical must be a number between 1 and 100 ❗");
+    return false;
+  }
+  if (!stat_regex.test(sho) || sho < 1 || sho > 100) {
+    alert("phooting must be a number between 1 and 100 ❗");
+    return false;
+  }
+  if (!stat_regex.test(drib) || drib < 1 || drib > 100) {
+    alert("pribbling must be a number between 1 and 100 ❗");
+    return false;
+  }
+  if (!stat_regex.test(def) || def < 1 || def > 100) {
+    alert("defending must be a number between 1 and 100 ❗");
+    return false;
+  }
+  return true
+}
 
 /////////////////////// EDIT FUNCTION  ////////////////////////////////////
 
@@ -151,9 +192,6 @@ window.edit = (id) => {
     "submit",
     (e) => {
       e.preventDefault()
-      
-      regex(name_regex,url_regex,stat_regex,new_Name.value,new_url.value,new_logo.value,new_pac.value,new_pas.value,new_phy.value,new_sho.value,new_drib.value,new_def.value)
-
       player.name = new_Name.value;
       player.photo = new_url.value;
       player.logo = new_logo.value;
@@ -286,47 +324,7 @@ function add_players_to_changement() {
   });
 }
 
-///////////////////////////////////////////////// function of validation of form with regex /////////////////////////////////
 
-function regex(name_regex,url_regex,stat_regex,name,url,logo,pac,pas,phy,sho,drib,def){
-  if (!name_regex.test(name)) {
-    alert("player name should contain only letters and spaces ❗");
-    return false;
-  }
-  if (!url_regex.test(url)) {
-    alert("please enter a valid URL for the player photo ❗");
-    return false;
-  }
-  if (!url_regex.test(logo)) {
-    alert("please enter a valid URL for the player logo ❗");
-    return;
-  }
-  if (!stat_regex.test(pac) || pac < 1 || pac > 100) {
-    alert("pace must be a number between 1 and 100 ❗");
-    return false ;
-  }
-  if (!stat_regex.test(pas) || pas < 1 || pas > 100) {
-    alert("passing must be a number between 1 and 100 ❗");
-    return false;
-  }
-  if (!stat_regex.test(phy) || phy < 1 || phy > 100) {
-    alert("physical must be a number between 1 and 100 ❗");
-    return false;
-  }
-  if (!stat_regex.test(sho) || sho < 1 || sho > 100) {
-    alert("phooting must be a number between 1 and 100 ❗");
-    return false;
-  }
-  if (!stat_regex.test(drib) || drib < 1 || drib > 100) {
-    alert("pribbling must be a number between 1 and 100 ❗");
-    return false;
-  }
-  if (!stat_regex.test(def) || def < 1 || def > 100) {
-    alert("defending must be a number between 1 and 100 ❗");
-    return false;
-  }
-  return true
-}
 
 
 //////////////////////////////// function for add new player ////////////////////////////////////////
