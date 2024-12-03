@@ -78,7 +78,7 @@ const stat_regex = /^[0-9][0-9]?$/;
 
 /////////////////////////////////////////////////////////////////////
 const changement = document.getElementById("changement");
-const id = document.querySelectorAll(".scale");
+const id = document.querySelectorAll(".position_of_player");
 //////////////////////// BURGER MENU //////////////////////////////
 
 const menu =  document.querySelectorAll(".menu");
@@ -107,7 +107,6 @@ window.delet = (id) => {
   if (typeof id === "number") {
     const index_player = all_players.findIndex((player) => player.id === id);
     all_players.splice(index_player, 1);
-
     add_players_to_changement();
   } else {
     inner_img = id.parentElement;

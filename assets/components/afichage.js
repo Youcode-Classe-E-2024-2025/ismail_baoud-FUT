@@ -4,9 +4,9 @@ import { el, setText , } from "../js/main.js";
 
 
 ////////////////////////////////////////////////// ALL PLAYERS
-
+let count = 1;
 export function add_to_terran(target, element){
-    target.innerHTML = `<div id="${element.nationality}" data-id="${element.id}" class="card hover:cursor-pointer relative w-20 h-20">
+    target.innerHTML = `<div id="player_${element.id}" data-id="${element.id}" class="card hover:cursor-pointer relative w-20 h-20">
     <div class=" bg-cover flex flex-col items-center justify-center w-full h-full" style="background-image: url(assets/images/avp24ghdj-removebg.png);">
         <div class="w-20 h-full ">
         <div><img id="${element.id}"  class="w-11 self-center m-auto mb-0 mt-[6px]" src="" alt="">
@@ -26,7 +26,7 @@ export function add_to_terran(target, element){
             <div class="flex flex-row"><span id="phy${element.name}"></span><span class="ml-1">  pos</span></div>
         </div>
     </div>
-    <button  onclick="delet(${element.nationality})"><img class="w-3 h-3 absolute top-0 left-0" src="./assets/images/supprimer.png" alt=""></button>
+    <button  onclick="delet(player_${element.id})"><img class="w-3 h-3 absolute bottom-[-13px] left-[42%]" src="./assets/images/supprimer.png" alt=""></button>
 
   </div>`
   let player = el(`${element.id}`);
@@ -38,10 +38,10 @@ export function add_to_terran(target, element){
     setText(`def${element.name}`, element.defending);
     setText(`phy${element.name}`, element.physical);
 }
-
+count++;
 ///////////////////////////////////////////////// GK player
 export function add_to_terran_like_GK(target, element){
-    target.innerHTML = `<div id="${element.nationality}"data-id="${element.id}" class="play relative play hover:cursor-pointer w-20 h-20 hover:z-20">
+    target.innerHTML = `<div id="player_${element.id}"data-id="${element.id}" class="play relative play hover:cursor-pointer w-20 h-20 hover:z-20">
     <div class=" bg-cover flex flex-col items-center justify-center w-full h-full" style="background-image: url(assets/images/avp24ghdj-removebg.png);">
         <div class="w-20 h-full ">
         <div><img id="${element.id}"  class="w-11 self-center m-auto mb-0 mt-[6px]" src="" alt="">
@@ -61,7 +61,7 @@ export function add_to_terran_like_GK(target, element){
         </div>
     </div>
     <div>
-    <button   onclick="delet(${element.nationality})"><img class="w-3 h-3 absolute top-0 left-0" src="./assets/images/supprimer.png" alt=""></button>
+    <button   onclick="delet(player_${element.id})"><img class="w-3 h-3  absolute bottom-[-13px] left-[42%]" src="./assets/images/supprimer.png" alt=""></button>
     </div>
   </div>`
   let player = el(`${element.id}`);
